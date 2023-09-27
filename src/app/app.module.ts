@@ -12,6 +12,7 @@ import { FilterComponent } from './components/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DishesWrapperComponent } from './components/dishes-wrapper/dishes-wrapper.component';
 import { DishCardComponent } from './components/dish-card/dish-card.component';
+import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 
 
 
@@ -25,7 +26,8 @@ import { DishCardComponent } from './components/dish-card/dish-card.component';
     HomeComponent,
     FilterComponent,
     DishesWrapperComponent,
-    DishCardComponent
+    DishCardComponent,
+    AddRecipeComponent
   ],
   imports: [
     BrowserModule,
