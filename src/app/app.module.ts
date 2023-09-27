@@ -13,6 +13,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DishesWrapperComponent } from './components/dishes-wrapper/dishes-wrapper.component';
 import { DishCardComponent } from './components/dish-card/dish-card.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RecipeDataFormComponent } from './components/recipe-data-form/recipe-data-form.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 
 
@@ -27,7 +30,10 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
     FilterComponent,
     DishesWrapperComponent,
     DishCardComponent,
-    AddRecipeComponent
+    AddRecipeComponent,
+    HeaderComponent,
+    RecipeDataFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

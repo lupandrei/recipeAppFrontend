@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component} from '@angular/core';
 
 @Component({
   selector: 'app-add-recipe',
@@ -6,5 +6,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-recipe.component.scss']
 })
 export class AddRecipeComponent {
-
+    
+    title:string='Create Recipe';
 }

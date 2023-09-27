@@ -6,6 +6,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const routes: Routes = [
   {path: '',component:LoginComponent},
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path:'navbar',component:NavbarComponent},
   {path:'home',component:HomeComponent},
   {path:'filter',component:FilterComponent},
-  {path:'add',component:AddRecipeComponent}
+  {path:'add',component:AddRecipeComponent},
+  {path:'profile',component:ProfileComponent}
 ];
 
 @NgModule({
