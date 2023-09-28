@@ -1,8 +1,8 @@
 .img-container {
-    height: 200px;
+    height: 26.77376171352075vh;
     width: 100%;
     background-color: white;
-    border-radius: 10px;
+    border-radius: 1.3386880856760375vh;
     position: relative;
     /* Add position relative */
     display: inline-block;
@@ -20,21 +20,15 @@ img {
 }
 
 #icon {
-    margin: 15px;
+    margin: 2.0080321285140563vh;
     border-radius: 2px;
-    // width: 20px;
-    // height: 20px;
-    //color: var(--colour-styles-primary-colour-primary-100, #129575);
     color: #FFAD30;
     cursor: pointer;
     position: absolute;
-    /* Change to absolute positioning */
-    top: 10px;
-    /* Adjust top to your preference */
-    right: 10px;
-    /* Adjust right to your preference */
+    top: 1.3386880856760375vh;
+    right: 1.3386880856760375vh;
     z-index: 2;
-    /* Ensure the icon appears above the image */
+   
 }
 
 .centered-text {
@@ -48,16 +42,16 @@ img {
 }
 
 input[type="text"] {
-    height: 45px;
+    height: 5.35475234270415vh;
 }
 
 .margin-between {
-    margin-bottom: 12px;
+    margin-bottom: 1.606425702811245vh;
 }
 .col-10,
 .col-6,
 .col-4 {
-    margin-right: 9px;
+    margin-right: 1.2048192771084338vh;
 }
 
 .text {
@@ -66,7 +60,7 @@ input[type="text"] {
     
     /* Poppins/label/regular */
     font-family: Poppins;
-    font-size: 14px;
+    font-size:  1.8741633199464525vh;
     font-style: normal;
     font-weight: 400;
     line-height: 140%; /* 19.6px */
@@ -74,13 +68,13 @@ input[type="text"] {
 .button-add{
     background-color: #f5f5f5;
     display: inline-flex;
-    height: 40px;
+    height: 5.35475234270415vh;
     justify-content: left;
     align-items: center;
     color: var(--neutral-90, #303030);
     /* Poppins/paragraph/bold */
     font-family: Poppins;
-    font-size: 16px;
+    font-size: 2.14190093708166vh;
     font-style: normal;
     font-weight: 600;
     line-height: 140%; /* 22.4px */
