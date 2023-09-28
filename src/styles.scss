@@ -6,7 +6,9 @@
   padding-right: 30px;
   padding-bottom: 10px;
 }
-
+body {
+  background-color: #f5f5f5;
+}
 input {
   border-radius: 10px;
   height: 55px;
@@ -112,7 +114,6 @@ a {
 .button-medium{
   display: inline-flex;
   height: 40px;
-  margin-top: 40px;
   padding: 18px 85px;
   justify-content: center;
   align-items: center;
@@ -166,9 +167,7 @@ a {
   margin: 0px !important;
 }
 
-body {
-  background: #f5f5f5;
-}
+
 .highlight-color {
   color: var(--colour-styles-primary-colour-primary-100, #129575);
 }
@@ -185,6 +184,12 @@ body {
 }
 .small-padding-top {
   padding-top: 2vh;
+}
+.margin-top {
+  margin-top: 5vh;
+}
+.small-margin-top {
+  margin-top: 2vh;
 }
 .filter-text {
   color: var(--colour-styles-neutral-colour-black, #000);

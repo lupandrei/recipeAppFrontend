@@ -16,6 +16,7 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
 import { HeaderComponent } from './components/header/header.component';
 import { RecipeDataFormComponent } from './components/recipe-data-form/recipe-data-form.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -39,7 +40,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

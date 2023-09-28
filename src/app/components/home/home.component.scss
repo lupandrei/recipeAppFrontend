@@ -1,3 +1,6 @@
+body {
+    background-color: #f5f5f5;
+  }
 .padding-top{
     padding-top: 5vh;
 }
@@ -7,6 +10,4 @@ input{
 }
 .blur{
     filter: blur(1px); 
-
-    //background-color: rgba(0, 0, 0, 0.7); /* Adjust opacity as needed */
 }

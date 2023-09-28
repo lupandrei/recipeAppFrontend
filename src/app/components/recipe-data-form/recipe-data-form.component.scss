@@ -1,0 +1,88 @@
+.img-container {
+    height: 200px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+    position: relative;
+    /* Add position relative */
+    display: inline-block;
+    text-align: center;
+    /* Center-align its children horizontally */
+}
+
+#fileInput {
+    display: none;
+}
+
+img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#icon {
+    margin: 15px;
+    border-radius: 2px;
+    // width: 20px;
+    // height: 20px;
+    //color: var(--colour-styles-primary-colour-primary-100, #129575);
+    color: #FFAD30;
+    cursor: pointer;
+    position: absolute;
+    /* Change to absolute positioning */
+    top: 10px;
+    /* Adjust top to your preference */
+    right: 10px;
+    /* Adjust right to your preference */
+    z-index: 2;
+    /* Ensure the icon appears above the image */
+}
+
+.centered-text {
+    display: flex;
+    align-items: center;
+    /* Vertically center the text */
+    justify-content: center;
+    /* Horizontally center the text */
+    height: 100%;
+    /* Take the full height of the container */
+}
+
+input[type="text"] {
+    height: 45px;
+}
+
+.margin-between {
+    margin-bottom: 12px;
+}
+.col-10,
+.col-6,
+.col-4 {
+    margin-right: 9px;
+}
+
+.text {
+    color: var(--neutral-90, #303030);
+    text-align: center;
+    
+    /* Poppins/label/regular */
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%; /* 19.6px */
+}
+.button-add{
+    background-color: #f5f5f5;
+    display: inline-flex;
+    height: 40px;
+    justify-content: left;
+    align-items: center;
+    color: var(--neutral-90, #303030);
+    /* Poppins/paragraph/bold */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%; /* 22.4px */
+    border:0px;
+  }

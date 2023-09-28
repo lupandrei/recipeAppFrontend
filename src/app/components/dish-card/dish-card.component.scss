@@ -11,15 +11,15 @@ img {
 }
 .card {
   margin: 0.3em;
-  height: 235px;
-  width: 155px;
+  height: 31vh;
+  width: 21vh;
   border-radius: 12px;
   background: var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2) inset;
 }
 .img-wrapper {
-  max-width: 100%;
-  height: 100px;
+  width: 100%;
+  height: 13.38vh;
   display: flex;
   justify-content: center;
 }
@@ -27,7 +27,7 @@ img {
   text-align: center;
   color: var(--colour-styles-neutral-colour-gray-1, #484848);
   font-family: Poppins;
-  font-size: 14px;
+  font-size: 1.87vh;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -37,7 +37,7 @@ img {
 
   /* Text Style/Smaller Text/Regular */
   font-family: Poppins;
-  font-size: 11px;
+  font-size: 1.47vh;
   font-style: normal;
   font-weight: 700;
   line-height: normal;
@@ -48,7 +48,7 @@ img {
 
   /* Text Style/Smaller Text/Bold */
   font-family: Poppins;
-  font-size: 11px;
+  font-size: 1.47vh;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
