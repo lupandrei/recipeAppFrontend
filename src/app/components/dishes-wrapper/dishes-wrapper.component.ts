@@ -11,15 +11,18 @@ export class DishesWrapperComponent implements OnInit {
   dishes!: DishMainView[];
   scrollPosition:number=0;
   carouselWidth:any;
-  cardWidth:any
+  cardWidth:any;
+
   ngOnInit(): void {
     this.dishes = mockMeals;
     console.log(this.dishes);
   }
+
   ngAfterViewInit() {
     this.carouselWidth = $('.carousel-inner')[0].scrollWidth;
     this.cardWidth =$('.carousel-item').width();
   }
+
   navigate(pos:string){
     if(pos==='next' && this.scrollPosition<this.carouselWidth-this.cardWidth){
       this.scrollPosition+=this.cardWidth;

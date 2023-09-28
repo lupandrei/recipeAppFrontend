@@ -3,4 +3,5 @@ export interface DishMainView {
   cookingTime: number;
   id: string;
   photo: string;
+  rating:number;
 }

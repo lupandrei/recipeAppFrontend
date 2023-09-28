@@ -12,6 +12,11 @@ import { FilterComponent } from './components/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DishesWrapperComponent } from './components/dishes-wrapper/dishes-wrapper.component';
 import { DishCardComponent } from './components/dish-card/dish-card.component';
+import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
+import { HeaderComponent } from './components/header/header.component';
+import { RecipeDataFormComponent } from './components/recipe-data-form/recipe-data-form.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -25,13 +30,18 @@ import { DishCardComponent } from './components/dish-card/dish-card.component';
     HomeComponent,
     FilterComponent,
     DishesWrapperComponent,
-    DishCardComponent
+    DishCardComponent,
+    AddRecipeComponent,
+    HeaderComponent,
+    RecipeDataFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

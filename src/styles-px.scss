@@ -12,19 +12,19 @@ body {
 }
 input {
   border-radius: 1.3386880856760375vh;
-  
+  height: 7.362784471218206vh;
   padding-left: 2.677376171352075vh;
   border: 1.5px solid var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
   background: var(--colour-styles-neutral-colour-white, #fff);
 }
 
 .input {
-  height: 10.843373493975903vh;
+  height: 81px;
   flex-shrink: 0;
 }
 label {
   font-family: Poppins;
-  font-size:  1.8741633199464525vh;
+  font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -42,7 +42,7 @@ a {
   
   text-align: center;
   font-family: Poppins;
-  font-size: 1.4725568942436413vh;
+  font-size: 11px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -51,7 +51,7 @@ a {
 
 .bold-title-font {
   font-family: Poppins;
-  font-size: 4.016064257028113vh;
+  font-size: 30px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -71,7 +71,7 @@ a {
 
   /* Text Style/Smaller Text/Regular */
   font-family: Poppins;
-  font-size: 1.4725568942436413vh;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -88,7 +88,7 @@ a {
 
 .input-font {
   font-family: Poppins;
-  font-size: 1.4725568942436413vh;
+  font-size: 11px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -96,16 +96,16 @@ a {
 
 .button-auth {
   display: inline-flex;
-  height:  8.032128514056225vh;
-  margin-top: 5.35475234270415vh;
-  padding: 2.4096385542168677vh 11.378848728246318vh;
+  height: 60px;
+  margin-top: 40px;
+  padding: 18px 85px;
   justify-content: center;
   align-items: center;
-  gap: 1.4725568942436413vh;
+  gap: 11px;
   border-radius: 1.3386880856760375vh;
   background: var(--colour-styles-primary-colour-primary-100, #129575);
   font-family: Poppins;
-  font-size: 2.4096385542168677vh;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -114,15 +114,15 @@ a {
 }
 .button-medium{
   display: inline-flex;
-  height: 5.35475234270415vh;
-  padding: 2.4096385542168677vh 11.378848728246318vh;
+  height: 40px;
+  padding: 18px 85px;
   justify-content: center;
   align-items: center;
-  gap: 1.4725568942436413vh;
+  gap: 11px;
   border-radius: 1.3386880856760375vh;
   background: var(--colour-styles-primary-colour-primary-100, #129575);
   font-family: Poppins;
-  font-size: 2.4096385542168677vh;
+  font-size: 18px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
@@ -136,8 +136,8 @@ a {
   opacity: 0.8;
 }
 .separator {
-  width: 26.104417670682732vh;
-  height: 2.2757697456492636vh;
+  width: 195px;
+  height: 17px;
   flex-shrink: 0;
 }
 .separator-text {
@@ -145,7 +145,7 @@ a {
   color: var(--colour-styles-label-colour, #121212);
   /* Text Style/Smaller Text/Semi Bold */
   font-family: Poppins;
-  font-size: 1.4725568942436413vh;
+  font-size: 11px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
@@ -197,7 +197,7 @@ a {
 
   /* Text Style/Small Text/Bold */
   font-family: Poppins;
-  font-size: 2.14190093708166vh;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;

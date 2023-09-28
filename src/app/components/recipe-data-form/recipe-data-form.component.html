@@ -1,0 +1,70 @@
+<form [formGroup]="dataForm" class="small-padding-top" (ngSubmit)="onSubmit()">
+    <div class="img-container">
+        <ng-container *ngIf="selectedImageUrl">
+            <img [src]="selectedImageUrl" alt="">
+        </ng-container>
+        <ng-container *ngIf="!selectedImageUrl">
+            <div class="centered-text" *ngIf="!selectedImageUrl">
+                <p class="bold-medium-font">Select An Image</p>
+            </div>
+        </ng-container>
+        <label for="fileInput">
+            <svg id="icon" xmlns="http://www.w3.org/2000/svg" width=" 3.3467202141900936vh" height=" 3.3467202141900936vh" fill="currentColor"
+                class="bi bi-pencil" viewBox="0 0 16 16">
+                <path
+                    d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z" />
+            </svg>
+        </label>
+        <input id="fileInput" accept="image/*" (change)="onFileSelected($event)" type="file">
+    </div>
+    <div class="small-padding-top">
+        <div class="row ">
+            <input class="text" type="text" class="col-12 margin-between text" placeholder="Title" formControlName="title">
+        </div>
+        <div class="row ">
+            <input type="text" class="col-12 text" placeholder="Cook Time (minutes)" formControlName="cookTime">
+        </div>
+    </div>
+    <div class="small-padding-top">
+        <p class="bold-medium-font margin-between">Ingredients</p>
+        <ng-container formArrayName="ingredients" *ngFor="let ingredient of ingredientsControls;let i=index">
+            <div class="row align-items-center ">
+                <ng-container [formGroupName]="i">
+                    <input type="text" formControlName="name" class="col-6 margin-between text" placeholder="Item name">
+                    <input type="text" formControlName="quantity" class="col-4 margin-between text" placeholder="Quantity">
+                    <span class=" col-1 margin-between">
+                        <svg (click)="deleteIngredient(i)" xmlns="http://www.w3.org/2000/svg" width=" 3.3467202141900936vh" height=" 3.3467202141900936vh"
+                            fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </span>
+                </ng-container>
+            </div>
+        </ng-container>
+        <div class="row">
+            <button class="button-add col-12" (click)="addIngredient()">+ Add new Ingredient</button>
+        </div>
+    </div>
+    <div class="small-padding-top">
+        <p class="bold-medium-font margin-between">Steps</p>
+        <ng-container formArrayName="steps" *ngFor="let step of stepControls;let i=index">
+            <div class="row align-items-center">
+                    <input type="text" [formControlName]="i" class="col-10 margin-between text" placeholder="Step {{i+1}}" >
+                    <p class=" col-1  text-end">
+                        <svg (click)="deleteStep(i)" style="margin-right: 0px;" xmlns="http://www.w3.org/2000/svg" width=" 3.3467202141900936vh" height=" 3.3467202141900936vh"
+                            fill="currentColor" class="bi bi-dash-circle" viewBox="0 0 16 16">
+                            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+                            <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8z" />
+                        </svg>
+                    </p>
+            </div>
+        </ng-container>
+        <div class="row">
+            <button class="button-add col-12" (click)="addStep()">+ Add new Step</button>
+        </div>
+    </div>
+    <div class="row">
+        <button class="button-medium margin-top" type="submit">Add Recipe</button>
+    </div>
+</form>
