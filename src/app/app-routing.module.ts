@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './components/user-auth/login/login.component';
 import { SignUpComponent } from './components/user-auth/sign-up/sign-up.component';
-import { NavbarComponent } from './components/navbar/navbar.component';
+import { NavbarComponent } from './components/navigation/navbar/navbar.component';
 import { HomeComponent } from './components/home/home.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';

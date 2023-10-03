@@ -8,12 +8,20 @@
   display: flex;
   padding:0px;
 }
-.carousel-control-prev,
+.carousel-control-prev{
+  width: 6vh;
+  height: 6vh;
+  border-radius: 50%;
+  top: 50%;
+  left:-10px;
+  transform: translateY(-50%);
+}
 .carousel-control-next {
   
   width: 6vh;
   height: 6vh;
   border-radius: 50%;
   top: 50%;
+  right:-15px;
   transform: translateY(-50%);
 }

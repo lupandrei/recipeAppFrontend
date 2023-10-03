@@ -1,0 +1,18 @@
+<div class="row margin-between small-margin-top">
+    <ng-container *ngIf="this.canNavigate">
+    <div class="col-3 px-0 small-margin-top">
+        <svg routerLink="/home" xmlns="http://www.w3.org/2000/svg" width="3.3467202141900936vh" height="3.3467202141900936vh" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+          </svg>
+    </div>
+    <div class="col-9 small-margin-top text-left">
+        <p class="bold-medium-font">{{title}}</p>
+    </div>
+</ng-container>
+<ng-container *ngIf="!this.canNavigate">
+    <div class="col-12 small-margin-top text-center">
+        <p class="bold-medium-font">{{title}}</p>
+    </div>
+</ng-container>
+</div>
+
