@@ -20,6 +20,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { UserDataComponent } from './components/profile/user-data/user-data.component';
 import { FullImageDisplayWrapperComponent } from './components/dishes-displays/full-image-display-wrapper/full-image-display-wrapper.component';
 import { FullImageDisplayComponent } from './components/dishes-displays/full-image-display/full-image-display.component';
+import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 
 
 
@@ -40,7 +41,8 @@ import { FullImageDisplayComponent } from './components/dishes-displays/full-ima
     ProfileComponent,
     UserDataComponent,
     FullImageDisplayWrapperComponent,
-    FullImageDisplayComponent
+    FullImageDisplayComponent,
+    RecipePageComponent
   ],
   imports: [
     BrowserModule,

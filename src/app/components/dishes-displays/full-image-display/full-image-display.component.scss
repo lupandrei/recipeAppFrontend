@@ -50,7 +50,7 @@ img {
 
 .title {
     color: var(--colour-styles-neutral-colour-white, #FFF);
-
+    //flex:2;
     /* Text Style/Small Text/Bold */
     font-family: Poppins;
     font-size: 14px;
@@ -61,7 +61,7 @@ img {
 
 .time {
     color: var(--colour-styles-neutral-colour-gray-4, #D9D9D9);
-
+    
     /* Text Style/Smaller Text/Regular */
     font-family: Poppins;
     font-size: 11px;
@@ -96,4 +96,17 @@ img {
     font-style: normal;
     font-weight: 400;
     line-height: normal;
+}
+
+.circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    height: 25px;
+    width: 25px;
+    object-fit: cover;
+    object-position: center;
+    background-color: white;
+    border: 1px solid #129575;
 }
