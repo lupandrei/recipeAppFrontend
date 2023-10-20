@@ -4,12 +4,12 @@ import { mockUser } from 'src/app/mock-data/mock-user-following';
 @Component({
   selector: 'app-user-data',
   templateUrl: './user-data.component.html',
-  styleUrls: ['./user-data.component.scss']
+  styleUrls: ['./user-data.component.scss'],
 })
 export class UserDataComponent implements OnInit {
-  user!:UserFollowing;
+  user!: UserFollowing;
+  
   ngOnInit(): void {
-    this.user=mockUser;
+    this.user = mockUser;
   }
-
 }

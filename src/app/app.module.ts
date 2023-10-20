@@ -21,7 +21,8 @@ import { UserDataComponent } from './components/profile/user-data/user-data.comp
 import { FullImageDisplayWrapperComponent } from './components/dishes-displays/full-image-display-wrapper/full-image-display-wrapper.component';
 import { FullImageDisplayComponent } from './components/dishes-displays/full-image-display/full-image-display.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
-
+import {HttpClientModule} from '@angular/common/http'
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -49,9 +50,10 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
     AppRoutingModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

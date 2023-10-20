@@ -1,0 +1,35 @@
+import { DishExtended } from "../entity/dish-extended";
+
+export const mockMeal: DishExtended = {
+    title: "Spaghetti Bolognese",
+    cookingTime: 30,
+    id: "meal1",
+    photo: "https://via.placeholder.com/300x200",
+    rating: 4.5,
+    steps: [
+      { text: "Boil water in a large pot." },
+      { text: "Add spaghetti to boiling water and cook for 8-10 minutes or until al dente." },
+      { text: "In a separate pan, heat olive oil over medium heat." },
+      { text: "Add minced garlic and chopped onions, and sauté until they become translucent." },
+      { text: "Add ground beef and cook until browned, breaking it into crumbles." },
+      { text: "Stir in tomato paste, crushed tomatoes, and Italian seasoning." },
+      { text: "Simmer the sauce for 15-20 minutes, stirring occasionally." },
+      { text: "Season with salt and pepper to taste." },
+      { text: "Serve the cooked spaghetti with the Bolognese sauce on top." },
+      { text: "Garnish with grated Parmesan cheese and fresh basil leaves." },
+    ],
+    ingredients: [
+      { name: "Spaghetti", quantity: "226 grams" },
+      { name: "Olive Oil", quantity: "30 grams" },
+      { name: "Garlic (minced)", quantity: "15 grams" },
+      { name: "Onion (chopped)", quantity: "100 grams" },
+      { name: "Ground Beef", quantity: "450 grams" },
+      { name: "Tomato Paste", quantity: "30 grams" },
+      { name: "Crushed Tomatoes", quantity: "794 grams" },
+      { name: "Italian Seasoning", quantity: "2 grams" },
+      { name: "Salt", quantity: "to taste" },
+      { name: "Black Pepper", quantity: "to taste" },
+      { name: "Parmesan Cheese (grated)", quantity: "15 grams" },
+      { name: "Fresh Basil Leaves", quantity: "for garnish" },
+    ],
+  };
