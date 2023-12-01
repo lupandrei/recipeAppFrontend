@@ -1,4 +1,4 @@
-import { UserFollowing } from "../entity/user-following";
+import { UserFollowing } from "../entity/following/user-following";
 
 export const mockUser: UserFollowing ={
     name:"Andrei Lup",

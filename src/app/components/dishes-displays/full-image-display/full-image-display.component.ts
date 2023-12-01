@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { DishMainView } from 'src/app/entity/dish-main-view';
+import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 
 @Component({
   selector: 'app-full-image-display',
@@ -8,5 +8,5 @@ import { DishMainView } from 'src/app/entity/dish-main-view';
 })
 export class FullImageDisplayComponent {
   @Input()
-  dish!:DishMainView;
+  dish!:RecipeDisplayDto;
 }

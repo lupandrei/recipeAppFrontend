@@ -23,7 +23,7 @@ import { FullImageDisplayComponent } from './components/dishes-displays/full-ima
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 import {HttpClientModule} from '@angular/common/http'
 import { UserService } from './services/user.service';
-
+import { MatSnackBarModule} from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [
@@ -51,7 +51,8 @@ import { UserService } from './services/user.service';
     BrowserAnimationsModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSnackBarModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

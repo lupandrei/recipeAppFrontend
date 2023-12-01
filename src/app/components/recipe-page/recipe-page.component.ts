@@ -1,16 +1,16 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DishExtended } from 'src/app/entity/dish-extended';
-import { DishMainView } from 'src/app/entity/dish-main-view';
-import { mockMeal } from 'src/app/mock-data/mock-meal-extended';
+import { RecipeDto } from 'src/app/entity/recipe/recipe-dto';
+import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
+
 @Component({
   selector: 'app-recipe-page',
   templateUrl: './recipe-page.component.html',
   styleUrls: ['./recipe-page.component.scss']
 })
 export class RecipePageComponent implements OnInit  {
-  dish!:DishExtended;
+  dish!:RecipeDto;
   ngOnInit(): void {
-    this.dish=mockMeal;
+    
   }
 
 }

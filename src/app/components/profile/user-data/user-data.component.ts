@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { UserFollowing } from 'src/app/entity/user-following';
+import { UserFollowing } from 'src/app/entity/following/user-following';
 import { mockUser } from 'src/app/mock-data/mock-user-following';
 @Component({
   selector: 'app-user-data',
