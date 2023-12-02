@@ -171,16 +171,16 @@ a {
 
 
 .highlight-color {
-  color: var(--colour-styles-primary-colour-primary-100, #129575);
+  color: #129575;
 }
 .white {
   color: white;
 }
-.filter-button {
-  background-color: #129575;
-  border-radius: 1.3386880856760375vh;
-  color: white;
-}
+// .filter-button {
+//   background-color: #129575;
+//   border-radius: 1.3386880856760375vh;
+//   color: white;
+// }
 .padding-top {
   padding-top: 5vh;
 }

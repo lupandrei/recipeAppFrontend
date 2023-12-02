@@ -1,37 +1,20 @@
-<div
-[ngClass]="{'blur':this.show}"
-class="main-container padding-top " >
-  <div class="row">
-    <p class="bold-medium-font col-8">Hello User</p>
-  </div>
-  <div class="row">
+<div [ngClass]="{'blur':this.show}" class="main-container padding-top ">
+  <div class="welcome-wrapper">
+    <p class="bold-medium-font">Hello User</p>
     <p class="secondary-small-text">What are you cooking today?</p>
   </div>
-  <div class="row ">
-    <input
-     class="col-9  input-font" type="text" placeholder="Search recipe" />
-    <div
-      class="col-2 text-center offset-1 filter-button" 
-      (click)="filterOptions()"
-    >
-      <h1>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="3.346vh"
-          height="3.346vh"
-          fill="currentColor"
-          class="bi bi-filter white"
-          viewBox="0 0 16 16"
-        >
-          <path
-            d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z"
-          />
-        </svg>
-      </h1>
+  <div class="search-container">
+    <input class="search-input input-font" type="text" placeholder="Search recipe" />
+    <div class="filter-button" (click)="filterOptions()">
+      <svg xmlns="http://www.w3.org/2000/svg" width="3.346vh" height="3.346vh" fill="currentColor"
+        class="bi bi-filter white" viewBox="0 0 16 16">
+        <path
+          d="M6 10.5a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7a.5.5 0 0 1-.5-.5zm-2-3a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-11a.5.5 0 0 1-.5-.5z" />
+      </svg>
     </div>
   </div>
   <app-dishes-wrapper></app-dishes-wrapper>
 </div>
 
-<app-filter [@fadeInOut] *ngIf="show"  (@fadeInOut.done)="onAnimationDone($event)"></app-filter>
+<app-filter [@fadeInOut] *ngIf="show" (@fadeInOut.done)="onAnimationDone($event)"></app-filter>
 <app-navbar *ngIf="animationDone"></app-navbar>
