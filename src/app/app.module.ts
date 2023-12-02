@@ -24,6 +24,7 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
 import {HttpClientModule} from '@angular/common/http'
 import { UserService } from './services/user.service';
 import { MatSnackBarModule} from '@angular/material/snack-bar'
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 @NgModule({
   declarations: [
@@ -52,7 +53,8 @@ import { MatSnackBarModule} from '@angular/material/snack-bar'
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    CarouselModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

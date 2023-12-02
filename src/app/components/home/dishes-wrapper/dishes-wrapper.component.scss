@@ -1,27 +1,27 @@
 .wrapper-dishes {
   width: 100%;
-	height: 100vh;
 	display: flex;
-	align-items: center;
 }
-.carousel-inner {
+
+// .owl-carousel .owl-stage{display: flex;}
+// .article-items {
+//     display: flex;
+//     flex: 1 0 auto;
+//     height: 100%;
+// }
+// .aticle-box {
+//     position: relative;
+//     overflow: hidden;
+//     /* margin-bottom: 80px; *//*This is optional*/
+//     display: flex;
+//     flex-direction: column;
+//     align-items: stretch;
+// }
+.owl-carousel .owl-stage {
   display: flex;
-  padding:0px;
 }
-.carousel-control-prev{
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 50%;
-  left:-10px;
-  transform: translateY(-50%);
-}
-.carousel-control-next {
-  
-  width: 6vh;
-  height: 6vh;
-  border-radius: 50%;
-  top: 50%;
-  right:-15px;
-  transform: translateY(-50%);
+
+.owl-carousel .owl-item  {
+  width: auto;
+  height: 100%;
 }

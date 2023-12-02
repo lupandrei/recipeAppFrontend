@@ -1,5 +1,5 @@
 <p class="filter-text padding-top">Latest Recipes</p>
-<div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel">
+<!-- <div id="carouselExampleControls" class="carousel slide  " data-bs-ride="carousel">
     <div class="carousel-inner">
     <ng-container *ngFor="let dish of dishes">
         <app-dish-card [dish]="dish"></app-dish-card>
@@ -16,4 +16,13 @@
         <path d="M6 12.796V3.204L11.481 8 6 12.796zm.659.753 5.48-4.796a1 1 0 0 0 0-1.506L6.66 2.451C6.011 1.885 5 2.345 5 3.204v9.592a1 1 0 0 0 1.659.753z"/>
       </svg>
   </button>
-</div>
+</div> -->
+<ng-container *ngIf="dishes && dishes.length > 0">
+  <owl-carousel-o #owlElement [options]="customOptions" class="wrapper-dishes">
+    <ng-container *ngFor="let dish of dishes">
+      <ng-template carouselSlide [id]="dish.id.toString()">
+        <app-dish-card [dish]="dish"></app-dish-card>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</ng-container>

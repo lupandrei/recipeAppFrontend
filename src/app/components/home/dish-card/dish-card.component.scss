@@ -1,135 +1,72 @@
-.carousel-item {
-  display: block;
-  margin-right: 0px;
-  flex: 0 0 calc(50% - 1vh); /* Equivalent to 100% / 2 */
+.card {
+  display: flex;
+  flex-direction: column;
+  height:250px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  overflow: hidden;
+}
 
+.img-wrapper {
+  height: 50%;
+  overflow: hidden;
 }
 
 img {
-  max-width: 100%;
-  max-height: 100%;
-  border-top-left-radius: 1.67vh; /* Equivalent to 12px */
-  border-top-right-radius: 1.67vh; /* Equivalent to 12px */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
 }
 
-.card {
-  margin: 0.3vh; /* Equivalent to 0.3em */
-  height: 29vh;
-  width: 18vh;
-  border-radius: 1.67vh; /* Equivalent to 12px */
-  background: var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
-  box-shadow: 0px 0.625vh 1.25vh 0px rgba(0, 0, 0, 0.2) inset; /* Equivalent to 0px 5px 10px 0px */
-}
-.card-footer{
-  height: 100%;
-}
-.img-wrapper {
-  width: 100%;
-  height: 13.38vh;
+.my-card-body {
+  
   display: flex;
   justify-content: center;
+  align-items: center;
+  height: 20%;
+  padding: 10px;
+  background-color: #D9D9D9;
 }
 
-.card-title {
-  text-align: center;
-  color: var(--colour-styles-neutral-colour-gray-1, #484848);
-  font-family: Poppins;
-  font-size: 1.87vh;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+.my-card-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  height: 30%;
+  padding: 10px;
+  background-color: #D9D9D9;
 }
 
 .time-text {
-  color: var(--colour-styles-neutral-colour-gray-3, #a9a9a9);
-  font-family: Poppins;
-  font-size: 1.47vh;
-  font-style: normal;
-  font-weight: 700;
-  line-height: normal;
-  margin: 0;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  color: #6c757d;
 }
 
 .minutes {
-  color: var(--colour-styles-neutral-colour-gray-1, #484848);
+  font-size: 14px;
+  font-weight: bold;
+  color: #343a40;
+}
+
+.rating-color {
+  color: #ffc107;
+}
+.rating-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+.my-card-title{
   font-family: Poppins;
-  font-size: 1.47vh;
+  font-size: 14px;
   font-style: normal;
   font-weight: 600;
   line-height: normal;
-  //margin-bottom: 0px;
+  overflow: hidden; /* Hide any content that overflows */
+  white-space: nowrap; /* Do not wrap text to the next line */
+  text-overflow: ellipsis; /* Display an ellipsis (...) when the text overflows */
 }
-
-.col-6 {
-  padding-left: 0px !important;
-  padding-right: 0px !important;
-}
-// .card-body {
-//   height: 600vh;
-//   padding:0px;
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-// }
-
-
-// .carousel-item {
-//   display: block;
-//   margin-right: 0px;
-//   flex: 0 0 calc(100% / 2);
-// }
-// img {
-//   max-width: 100%;
-//   max-height: 100%;
-//   border-top-left-radius: 12px;
-//   border-top-right-radius: 12px;
-// }
-// .card {
-//   margin: 0.3em;
-//   height: 31vh;
-//   width: 21vh;
-//   border-radius: 12px;
-//   background: var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
-//   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2) inset;
-// }
-// .img-wrapper {
-//   width: 100%;
-//   height: 13.38vh;
-//   display: flex;
-//   justify-content: center;
-// }
-// .card-title {
-//   text-align: center;
-//   color: var(--colour-styles-neutral-colour-gray-1, #484848);
-//   font-family: Poppins;
-//   font-size: 1.87vh;
-//   font-style: normal;
-//   font-weight: 600;
-//   line-height: normal;
-// }
-// .time-text {
-//   color: var(--colour-styles-neutral-colour-gray-3, #a9a9a9);
-
-//   /* Text Style/Smaller Text/Regular */
-//   font-family: Poppins;
-//   font-size: 1.47vh;
-//   font-style: normal;
-//   font-weight: 700;
-//   line-height: normal;
-//   margin: 0;
-// }
-// .minutes {
-//   color: var(--colour-styles-neutral-colour-gray-1, #484848);
-
-//   /* Text Style/Smaller Text/Bold */
-//   font-family: Poppins;
-//   font-size: 1.47vh;
-//   font-style: normal;
-//   font-weight: 600;
-//   line-height: normal;
-//   margin-bottom: 0px;
-// }
-// .col-6{
-//     padding-left: 0px !important;
-//     padding-right: 0px !important;
-// }
