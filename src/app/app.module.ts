@@ -25,7 +25,7 @@ import {HttpClientModule} from '@angular/common/http'
 import { UserService } from './services/user.service';
 import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
-
+import {MatIconModule} from '@angular/material/icon';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +54,8 @@ import { CarouselModule } from 'ngx-owl-carousel-o';
     ReactiveFormsModule,
     HttpClientModule,
     MatSnackBarModule,
-    CarouselModule
+    CarouselModule,
+    MatIconModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]

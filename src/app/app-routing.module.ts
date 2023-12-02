@@ -8,6 +8,8 @@ import { FilterComponent } from './components/filter/filter.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
+import { DomSanitizer } from '@angular/platform-browser';
+import { MatIconRegistry } from '@angular/material/icon';
 
 const routes: Routes = [
   {path: '',component:LoginComponent},
@@ -24,4 +26,25 @@ const routes: Routes = [
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+  constructor(
+    private matIconRegistry: MatIconRegistry,
+    private sanitizer: DomSanitizer,
+    ) {
+      this.matIconRegistry.addSvgIcon(
+        'home',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/home.svg')
+      )
+      .addSvgIcon(
+        'profile',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/profile.svg')
+      )
+      .addSvgIcon(
+        'notification',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/notification.svg')
+      )
+      .addSvgIcon(
+        'saved',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/saved.svg')
+      )
+      .addSvgIcon(
+        'add',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/add.svg')
+      )
+    }  
+}
