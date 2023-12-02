@@ -46,5 +46,8 @@ export class AppRoutingModule {
       .addSvgIcon(
         'add',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/add.svg')
       )
+      .addSvgIcon(
+        'rating',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/rating.svg')
+      )
     }  
 }
