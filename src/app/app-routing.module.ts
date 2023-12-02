@@ -49,5 +49,20 @@ export class AppRoutingModule {
       .addSvgIcon(
         'rating',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/rating.svg')
       )
+      .addSvgIcon(
+        'clock',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/clock.svg')
+      )
+      .addSvgIcon(
+        'filter',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/filter.svg')
+      )
+      .addSvgIcon(
+        'delete',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/delete.svg')
+      )
+      .addSvgIcon(
+        'pen',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/pen.svg')
+      )
+      .addSvgIcon(
+        'arrow-back',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/arrow-back.svg')
+      )
     }  
 }
