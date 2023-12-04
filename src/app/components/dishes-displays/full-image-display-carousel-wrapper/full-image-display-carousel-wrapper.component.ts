@@ -1,38 +1,35 @@
-import { Component,  OnInit, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
+import { OwlOptions } from 'ngx-owl-carousel-o';
+import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
 import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 import { RecipeService } from 'src/app/services/recipe.service';
-import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
-import { OwlOptions } from 'ngx-owl-carousel-o';
-@Component({
-  selector: 'app-dishes-wrapper',
-  templateUrl: './dishes-wrapper.component.html',
-  styleUrls: ['./dishes-wrapper.component.scss'],
-})
 
-export class DishesWrapperComponent implements OnInit {
+@Component({
+  selector: 'app-full-image-display-carousel-wrapper',
+  templateUrl: './full-image-display-carousel-wrapper.component.html',
+  styleUrls: ['./full-image-display-carousel-wrapper.component.scss']
+})
+export class FullImageDisplayCarouselWrapperComponent {
   dishes!: RecipeDisplayDto[];
   customOptions: OwlOptions = {
     loop: true,
-    autoplay:false,
+    autoplay:true,
     mouseDrag: true,
     touchDrag: true,
     pullDrag: false,
-    dots: true,
-    margin:10,
-    navSpeed: 700,
+    dots: false,
+    autoplayHoverPause:true,
+    navSpeed: 400,
     navText: ['', ''],
     //nav: true,
+    margin:10,
     responsive: {
-      200: {
+      0: {
         items: 1
       },
-      320: {
-        items: 2
-      },
-       600: {
-        items: 4
-      },
-    
+      500:{
+        items:2
+      }
     },
     
   }

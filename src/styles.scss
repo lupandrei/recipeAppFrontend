@@ -2,6 +2,15 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@font-face {
+  font-family: Poppins-Regular;
+  src: url(assets/fonts/Poppins-Regular.ttf);
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url(assets/fonts/Poppins-Bold.ttf);
+}
 .main-container {
   padding-left: 4.016064257028113vh;
   padding-right: 4.016064257028113vh;
@@ -13,7 +22,12 @@ body {
 }
 input {
   border-radius: 1.3386880856760375vh;
-  
+  padding-left: 2.677376171352075vh;
+  border: 1.5px solid var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
+  background: var(--colour-styles-neutral-colour-white, #fff);
+}
+select{
+  border-radius: 1.3386880856760375vh;
   padding-left: 2.677376171352075vh;
   border: 1.5px solid var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
   background: var(--colour-styles-neutral-colour-white, #fff);
@@ -51,7 +65,7 @@ a {
 }
 
 .bold-title-font {
-  font-family: Poppins;
+  font-family: Poppins-Bold;
   font-size: 4.016064257028113vh;
   font-style: normal;
   font-weight: 600;
@@ -60,7 +74,7 @@ a {
 }
 
 .bold-medium-font {
-  font-family: Poppins;
+  font-family: Poppins-Bold;
   font-size: 2.677376171352075vh;
   font-style: normal;
   font-weight: 600;
@@ -71,14 +85,14 @@ a {
   color: var(--colour-styles-neutral-colour-gray-3, #a9a9a9);
 
   /* Text Style/Smaller Text/Regular */
-  font-family: Poppins;
+  font-family: Poppins-Regular;
   font-size: 1.4725568942436413vh;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
 }
 .regular-title-font {
-  font-family: Poppins;
+  font-family: Poppins-Regular;
   font-size: 2.677376171352075vh;
   font-style: normal;
   font-weight: 400;
@@ -88,7 +102,7 @@ a {
 }
 
 .input-font {
-  font-family: Poppins;
+  font-family: Poppins-Regular;
   font-size: 1.4725568942436413vh;
   font-style: normal;
   font-weight: 400;
@@ -105,7 +119,7 @@ a {
   gap: 1.4725568942436413vh;
   border-radius: 1.3386880856760375vh;
   background: var(--colour-styles-primary-colour-primary-100, #129575);
-  font-family: Poppins;
+  font-family: Poppins-Bold;
   font-size: 2.4096385542168677vh;
   font-style: normal;
   font-weight: 600;
@@ -122,7 +136,7 @@ a {
   gap: 1.4725568942436413vh;
   border-radius: 1.3386880856760375vh;
   background: var(--colour-styles-primary-colour-primary-100, #129575);
-  font-family: Poppins;
+  font-family: Poppins-Bold;
   font-size: 2.4096385542168677vh;
   font-style: normal;
   font-weight: 600;
@@ -145,7 +159,7 @@ a {
   color: var(--colour-styles-neutral-colour-gray-4, #d9d9d9);
   color: var(--colour-styles-label-colour, #121212);
   /* Text Style/Smaller Text/Semi Bold */
-  font-family: Poppins;
+  font-family: Poppins-Regular;
   font-size: 1.4725568942436413vh;
   font-style: normal;
   font-weight: 500;
@@ -197,7 +211,7 @@ a {
   color: var(--colour-styles-neutral-colour-black, #000);
 
   /* Text Style/Small Text/Bold */
-  font-family: Poppins;
+  font-family: Poppins-Bold;
   font-size: 2.14190093708166vh;
   font-style: normal;
   font-weight: 600;

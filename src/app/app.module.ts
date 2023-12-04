@@ -26,6 +26,7 @@ import { UserService } from './services/user.service';
 import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
+import { FullImageDisplayCarouselWrapperComponent } from './components/dishes-displays/full-image-display-carousel-wrapper/full-image-display-carousel-wrapper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import {MatIconModule} from '@angular/material/icon';
     UserDataComponent,
     FullImageDisplayWrapperComponent,
     FullImageDisplayComponent,
-    RecipePageComponent
+    RecipePageComponent,
+    FullImageDisplayCarouselWrapperComponent
   ],
   imports: [
     BrowserModule,
