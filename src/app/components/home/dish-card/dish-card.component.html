@@ -1,0 +1,18 @@
+<div class="card" (click)="navigateToRecipe(dish.id)">
+  <div class="img-wrapper">
+    <img [src]="dish.photo" alt="Dish Image" />
+  </div>
+  <div class="my-card-body">
+    <h5 class="my-card-title">{{ dish.title }}</h5>
+  </div>
+  <div class="my-card-footer">
+    <div class="time-section">
+      <p class="time-text">Time</p>
+      <p class="minutes">{{ dish.cookTime }}</p>
+    </div>
+    <div class="rating-section">
+      <span class="minutes">{{ dish.rating }}</span>
+      <mat-icon svgIcon="rating" class="rating-color"></mat-icon>
+    </div>
+  </div>
+</div>

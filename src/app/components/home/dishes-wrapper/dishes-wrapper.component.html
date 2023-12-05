@@ -1,0 +1,10 @@
+<p class="filter-text padding-top">Latest Recipes</p>
+<ng-container *ngIf="dishes && dishes.length > 0">
+  <owl-carousel-o #owlElement [options]="customOptions" class="wrapper-dishes">
+    <ng-container *ngFor="let dish of dishes">
+      <ng-template carouselSlide [id]="dish.id.toString()">
+        <app-dish-card [dish]="dish"></app-dish-card>
+      </ng-template>
+    </ng-container>
+  </owl-carousel-o>
+</ng-container>
