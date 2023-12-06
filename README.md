@@ -55,4 +55,9 @@ Components used: header, full-image-display, follow-user steps,ingredients(might
 
 ![view-recipe](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/b5d91e73-cae1-4420-9b6b-ed7c95fdd592)
 
+**Search Users Page**
+
+Components used: follow-user-wrapper
+
+![search-users-v1](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/6859327c-9bb0-4e9a-834d-b0b3f6354932)
 
