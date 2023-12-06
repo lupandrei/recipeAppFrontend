@@ -49,12 +49,10 @@ Components used: header, user-data, full-image-display-wrapper, navbar
 
 ![profile](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/0c7985cc-a9da-4d90-b1b5-f4ae9f596e77)
 
-**Recipe Page** - still under development
+**Recipe Page** - follow operation not linked yet
 
-Components used: header, full-image-display(I know, it is not working properly at the moment:(), steps,ingredients(might rename them to 'x'-wrapper) 
+Components used: header, full-image-display, follow-user steps,ingredients(might rename them to 'x'-wrapper) 
 
-![recipe1](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/d22c7dc6-23b3-416f-a0e3-cc3245a0436b)
-![recipe2](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/acbc9ee0-63bc-4b21-9270-fa231a9c60e2)
-
+![view-recipe](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/b5d91e73-cae1-4420-9b6b-ed7c95fdd592)
 
 
