@@ -10,6 +10,7 @@ import { ProfileComponent } from './components/profile/profile.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
+import { SearchUsersComponent } from './components/search-users/search-users.component';
 
 const routes: Routes = [
   {path: '',component:LoginComponent},
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'filter',component:FilterComponent},
   {path:'add',component:AddRecipeComponent},
   {path:'profile',component:ProfileComponent},
-  {path:'recipe',component:RecipePageComponent}
+  {path:'recipe',component:RecipePageComponent},
+  {path:'search',component:SearchUsersComponent}
 ];
 
 @NgModule({
@@ -63,6 +65,9 @@ export class AppRoutingModule {
       )
       .addSvgIcon(
         'arrow-back',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/arrow-back.svg')
+      )
+      .addSvgIcon(
+        'search',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/search.svg')
       )
     }  
 }

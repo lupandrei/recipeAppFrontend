@@ -1,14 +1,10 @@
-<div class="row margin-between small-margin-top">
+<div class="header-navigation small-padding-top">
     <ng-container *ngIf="this.canNavigate">
-        <div class="col-3 px-0 small-margin-top">
             <mat-icon svgIcon="arrow-back" routerLink="/home"></mat-icon>
-        </div>
-        <div class="col-9 small-margin-top text-left">
             <p class="bold-medium-font">{{title}}</p>
-        </div>
     </ng-container>
     <ng-container *ngIf="!this.canNavigate">
-        <div class="col-12 small-margin-top text-center">
+        <div class="center-title">
             <p class="bold-medium-font">{{title}}</p>
         </div>
     </ng-container>

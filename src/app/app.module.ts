@@ -27,6 +27,13 @@ import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
 import { FullImageDisplayCarouselWrapperComponent } from './components/dishes-displays/full-image-display-carousel-wrapper/full-image-display-carousel-wrapper.component';
+import { StepsComponent } from './components/recipe-page/steps/steps.component';
+import { IngredientsComponent } from './components/recipe-page/ingredients/ingredients.component';
+import { StepComponent } from './components/recipe-page/step/step.component';
+import { IngredientComponent } from './components/recipe-page/ingredient/ingredient.component';
+import { FollowUserComponent } from './components/follow/follow-user/follow-user.component';
+import { SearchUsersComponent } from './components/search-users/search-users.component';
+import { FollowUserWrapperComponent } from './components/follow/follow-user-wrapper/follow-user-wrapper.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +53,14 @@ import { FullImageDisplayCarouselWrapperComponent } from './components/dishes-di
     FullImageDisplayWrapperComponent,
     FullImageDisplayComponent,
     RecipePageComponent,
-    FullImageDisplayCarouselWrapperComponent
+    FullImageDisplayCarouselWrapperComponent,
+    StepsComponent,
+    IngredientsComponent,
+    StepComponent,
+    IngredientComponent,
+    FollowUserComponent,
+    SearchUsersComponent,
+    FollowUserWrapperComponent
   ],
   imports: [
     BrowserModule,

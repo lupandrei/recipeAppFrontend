@@ -1,0 +1,7 @@
+<div class="main-container margin-top">
+    <input [(ngModel)]="search" (input)="onSearchChange()" class="search-user" type="text"
+        placeholder="Search for Taste Twins">
+    <app-follow-user-wrapper *ngIf="users" [users]="users"></app-follow-user-wrapper>
+</div>
+    
+<app-navbar></app-navbar>

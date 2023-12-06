@@ -5,6 +5,7 @@
 .fixed-navbar {
   position: fixed;
   border-top-right-radius: 1vh;
+  color:#c7c4c4;
   border-top-left-radius: 1vh;
   box-shadow: 0px -0.25vh 1.25vh 0px #129575;
   bottom: 0;
@@ -20,5 +21,10 @@
 
 .fixed-navbar mat-icon:nth-child(3) {
   margin-top: -25px;
-  transform: scale(1.8);
+  transform: scale(1.7);
 }
+
+
+// .fixed-navbar mat-icon:nth-child(2) {
+//   transform: scale(1.8);
+// }
