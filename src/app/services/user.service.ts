@@ -5,17 +5,25 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { UserBasicDataDto } from '../entity/user/user-basic-data-dto';
 import { Constants } from '../config/constants';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { PaginatedUsersReponse } from '../entity/user/paginated-user-response';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
-
   private readonly USER_API_ENDPOINT = Constants.API_ENDPOINT + '/users';
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
   login(userLoginDto: UserLoginDto): Observable<UserBasicDataDto> {
     return this.http.post<UserBasicDataDto>(this.USER_API_ENDPOINT+'/login', userLoginDto).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.handleError(error);
+        return throwError(error);
+      }))
+  }
+
+  getUsersByEmail(email:string):Observable<PaginatedUsersReponse>{
+    return this.http.get<PaginatedUsersReponse>(this.USER_API_ENDPOINT+`?email=${email}`).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error);

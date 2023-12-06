@@ -3,7 +3,7 @@
   <owl-carousel-o #owlElement [options]="customOptions" class="wrapper">
     <ng-container *ngFor="let dish of dishes">
       <ng-template carouselSlide [id]="dish.id.toString()">
-        <app-full-image-display [dish]="dish"></app-full-image-display>
+        <app-full-image-display [dish]="dish" [showTitle]="showTitle"></app-full-image-display>
       </ng-template>
     </ng-container>
   </owl-carousel-o>

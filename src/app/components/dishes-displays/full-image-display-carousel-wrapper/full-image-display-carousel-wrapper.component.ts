@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
 import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
@@ -10,6 +10,8 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./full-image-display-carousel-wrapper.component.scss']
 })
 export class FullImageDisplayCarouselWrapperComponent {
+  @Input()
+  showTitle!:boolean;
   dishes!: RecipeDisplayDto[];
   customOptions: OwlOptions = {
     loop: true,

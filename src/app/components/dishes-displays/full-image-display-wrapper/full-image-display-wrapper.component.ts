@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
 import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 import { mockMeals } from 'src/app/mock-data/mock-meals';
@@ -9,6 +9,9 @@ import { RecipeService } from 'src/app/services/recipe.service';
   styleUrls: ['./full-image-display-wrapper.component.scss']
 })
 export class FullImageDisplayWrapperComponent implements OnInit {
+
+  @Input()
+  showTitle!:boolean;
   dishes!:RecipeDisplayDto[];
   constructor(private recipeService:RecipeService){};
 

@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 
 @Component({
@@ -12,6 +12,13 @@ export class DishCardComponent {
   dish!:RecipeDisplayDto;
   constructor(private router:Router){}
   navigateToRecipe(id:number){
-    this.router.navigate([`/recipe`],{ queryParams: { id: id } })
+    // this.router.navigate([`/recipe`],{ queryParams: { id: id } })
+
+    const navigationExtras: NavigationExtras = {
+      state: {
+        id: id
+      }
+    };
+    this.router.navigate([`/recipe`],navigationExtras);
   }
 }

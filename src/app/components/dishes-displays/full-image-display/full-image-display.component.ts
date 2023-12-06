@@ -9,4 +9,7 @@ import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 export class FullImageDisplayComponent {
   @Input()
   dish!:RecipeDisplayDto;
+
+  @Input()
+  showTitle!:boolean;
 }
