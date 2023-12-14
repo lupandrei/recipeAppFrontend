@@ -1,7 +1,10 @@
-<div class="header-navigation small-padding-top">
+<div class="header-navigation margin-top small-margin-bottom">
     <ng-container *ngIf="this.canNavigate">
             <mat-icon svgIcon="arrow-back" routerLink="/home"></mat-icon>
-            <p class="bold-medium-font">{{title}}</p>
+            <div class="center-title">
+                <p class="bold-medium-font">{{title}}</p>
+            </div>
+           
     </ng-container>
     <ng-container *ngIf="!this.canNavigate">
         <div class="center-title">

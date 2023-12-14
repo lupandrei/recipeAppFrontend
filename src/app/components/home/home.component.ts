@@ -1,33 +1,30 @@
-import { Component } from '@angular/core';
-import { trigger, transition, style, animate,state } from '@angular/animations';
+import { Component, OnInit } from '@angular/core';
+import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
+import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
+import { RecipeService } from 'src/app/services/recipe.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
-  animations: [
-    trigger('fadeInOut', [
-      state('in', style({ opacity: 1, transform: 'translateY(0%)' })), 
-      transition(':enter', [
-        style({ opacity: 0, transform: 'translateY(100%)' }),
-        animate('500ms ease-out', style({ opacity: 1, transform: 'translateY(0%)' })),
-      ]),
-      transition(':leave', [
-        animate('500ms ease-in', style({ opacity: 0, transform: 'translateY(100%)' })),
-      ]),
-    ]),
-  ],
+  
 })
-export class HomeComponent {
+export class HomeComponent implements OnInit{
   show:boolean=false;
-  animationDone:boolean = true;
-  filterOptions(){
-   if(!this.show)
-    this.animationDone=false;
-   this.show=!this.show; 
-  } 
-  onAnimationDone(event: any) {
-    if (event.toState === 'void' && event.phaseName === 'done') {
-      this.animationDone = true
-    }
+  animationDone:boolean=true;
+  dishes!:RecipeDisplayDto[];
+  constructor(private recipeService:RecipeService){}
+  showEventHandle($event:any){
+    this.show=$event;
   }
+  animationDoneEventHandle($event:any){
+    this.animationDone=$event;
+  }
+  ngOnInit(): void {
+    this.recipeService.getFilteredDisplayRecipes()
+   .subscribe({
+     next: (data: PaginatedDisplayRecipeResponse) => {
+       this.dishes=data.recipes
+     }
+   })
+ }
 }

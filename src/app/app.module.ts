@@ -34,6 +34,8 @@ import { IngredientComponent } from './components/recipe-page/ingredient/ingredi
 import { FollowUserComponent } from './components/follow/follow-user/follow-user.component';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { FollowUserWrapperComponent } from './components/follow/follow-user-wrapper/follow-user-wrapper.component';
+import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
+import { SearchFilterBarComponent } from './components/search-users/search-filter-bar/search-filter-bar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +62,9 @@ import { FollowUserWrapperComponent } from './components/follow/follow-user-wrap
     IngredientComponent,
     FollowUserComponent,
     SearchUsersComponent,
-    FollowUserWrapperComponent
+    FollowUserWrapperComponent,
+    SearchRecipesComponent,
+    SearchFilterBarComponent
   ],
   imports: [
     BrowserModule,

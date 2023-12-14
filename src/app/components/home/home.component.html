@@ -3,16 +3,9 @@
     <p class="bold-medium-font">Hello User</p>
     <p class="secondary-small-text">What are you cooking today?</p>
   </div>
-  <div class="search-container">
-    <input class="search-input input-font" type="text" placeholder="Search recipe" />
-    <div class="filter-button" (click)="filterOptions()">
-     <mat-icon svgIcon="filter"></mat-icon>
-    </div>
-  </div>
-  <app-dishes-wrapper></app-dishes-wrapper>
+  <app-search-filter-bar (showEvent) ="showEventHandle($event)" (animationDoneEvent)="animationDoneEventHandle($event)"></app-search-filter-bar>
+  <app-dishes-wrapper [dishes]="dishes"></app-dishes-wrapper>
   <app-full-image-display-carousel-wrapper [showTitle]="true"></app-full-image-display-carousel-wrapper>
-  <div class="padding"></div>
+  <div *ngIf="show" class="padding"></div>
 </div>
-
-<app-filter [@fadeInOut] *ngIf="show" (@fadeInOut.done)="onAnimationDone($event)"></app-filter>
 <app-navbar *ngIf="animationDone"></app-navbar>

@@ -38,6 +38,7 @@ export class RecipeService {
     category?: string,
     title?: string
   ): Observable<any> {
+    
     let url = this.RECIPE_API_ENDPOINT + '/display';
     if (rating || category || title) {
       let params = new HttpParams();
@@ -48,10 +49,11 @@ export class RecipeService {
         params = params.set('category', category);
       }
       if (title) {
-        params.set('title', title);
+        params=params.set('title', title);
       }
       url += `?${params.toString()}`;
     }
+    console.log(url)
     return this.http.get(url).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);

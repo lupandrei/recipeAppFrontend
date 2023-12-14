@@ -1,0 +1,7 @@
+<div class="search-container">
+    <input (mousedown)="verifyCurrentPage()" [(ngModel)]="search" (input)="onSearchChange()" class="search-input input-font" type="text" placeholder="Search recipe" />
+    <div class="filter-button" (click)="filterOptions()">
+     <mat-icon svgIcon="filter"></mat-icon>
+    </div>
+  </div>
+  <app-filter (filterOptionsEvent)="handleFilterOptionEvent($event)" [@simpleFadeAnimation] *ngIf="show" (@simpleFadeAnimation.done)="onAnimationDone($event)"></app-filter>

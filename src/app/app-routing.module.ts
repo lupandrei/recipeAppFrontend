@@ -11,6 +11,7 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
+import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
 
 const routes: Routes = [
   {path: '',component:LoginComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'add',component:AddRecipeComponent},
   {path:'profile',component:ProfileComponent},
   {path:'recipe',component:RecipePageComponent},
-  {path:'search',component:SearchUsersComponent}
+  {path:'search-users',component:SearchUsersComponent},
+  {path:'search-recipes',component:SearchRecipesComponent}
 ];
 
 @NgModule({
