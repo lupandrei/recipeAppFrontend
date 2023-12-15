@@ -30,7 +30,7 @@ AI-Powered Descriptions: Generate enticing recipe descriptions using OpenAI's AP
 
 **Home page**
 
-Components used: dishes-wrapper, full-image-carousel-wrapper, filter, navbar
+Components used: dishes-wrapper, full-image-carousel-wrapper, search-filter-bar, navbar
 
 ![home1](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/f798bd50-82a5-4b32-a7e8-020113ebdf03)
 ![home2](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/bed1c3cd-6834-43ed-8806-611da3a215a5)
@@ -61,3 +61,7 @@ Components used: follow-user-wrapper
 
 ![search-users-v1](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/6859327c-9bb0-4e9a-834d-b0b3f6354932)
 
+**Search Recipes Page**
+Components used: header, search-filter-bar, full-image-display-wrapper
+
+![search-recipes](https://github.com/lupandrei/recipeAppFrontend/assets/126556183/59b75f35-65dc-4531-9cb5-c1061c273bcb)
