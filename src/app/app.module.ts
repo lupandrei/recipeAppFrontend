@@ -21,7 +21,7 @@ import { UserDataComponent } from './components/profile/user-data/user-data.comp
 import { FullImageDisplayWrapperComponent } from './components/dishes-displays/full-image-display-wrapper/full-image-display-wrapper.component';
 import { FullImageDisplayComponent } from './components/dishes-displays/full-image-display/full-image-display.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
-import {HttpClientModule} from '@angular/common/http'
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
 import { UserService } from './services/user.service';
 import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
@@ -36,6 +36,10 @@ import { SearchUsersComponent } from './components/search-users/search-users.com
 import { FollowUserWrapperComponent } from './components/follow/follow-user-wrapper/follow-user-wrapper.component';
 import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
 import { SearchFilterBarComponent } from './components/search-users/search-filter-bar/search-filter-bar.component';
+import { HttpInterceptorService } from './services/config/http-interceptor.service';
+import { CookieServiceImpl } from './services/config/cookie.service';
+import { JwtService } from './services/config/jwt.service';
+import { LoginGuardService } from './services/guard/login-guard.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,7 +81,11 @@ import { SearchFilterBarComponent } from './components/search-users/search-filte
     CarouselModule,
     MatIconModule
   ],
-  providers: [UserService],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }, JwtService,CookieServiceImpl, LoginGuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

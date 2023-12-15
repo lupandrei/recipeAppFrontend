@@ -12,9 +12,10 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
+import { LoginGuardService } from './services/guard/login-guard.service';
 
 const routes: Routes = [
-  {path: '',component:LoginComponent},
+  {path: '',component:LoginComponent,canActivate:[LoginGuardService]},
   {path: 'sign-up',component:SignUpComponent},
   {path:'navbar',component:NavbarComponent},
   {path:'home',component:HomeComponent},

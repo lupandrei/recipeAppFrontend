@@ -53,7 +53,6 @@ export class RecipeService {
       }
       url += `?${params.toString()}`;
     }
-    console.log(url)
     return this.http.get(url).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);

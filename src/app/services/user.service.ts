@@ -14,8 +14,8 @@ export class UserService {
   private readonly USER_API_ENDPOINT = Constants.API_ENDPOINT + '/users';
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
-  login(userLoginDto: UserLoginDto): Observable<UserBasicDataDto> {
-    return this.http.post<UserBasicDataDto>(this.USER_API_ENDPOINT+'/login', userLoginDto).pipe(
+  login(userLoginDto: UserLoginDto): Observable<String> {
+    return this.http.post<String>(this.USER_API_ENDPOINT+'/login', userLoginDto,{withCredentials:true}).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error);
