@@ -31,12 +31,4 @@ export class SearchUsersComponent {
   onSearchChange() {
     this.searchSubject.next(this.search);
   }
-  // onSearchChange(){
-  //   this.userService.getUsersByEmail(this.search)
-  //   .subscribe({
-  //     next: (data: PaginatedUsersReponse) => {
-  //       this.users=data.users
-  //     }
-  //   })
-  // }
 }

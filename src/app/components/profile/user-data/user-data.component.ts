@@ -1,15 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { UserFollowing } from 'src/app/entity/following/user-following';
-import { mockUser } from 'src/app/mock-data/mock-user-following';
+import { Component, Input, OnInit } from '@angular/core';
+import { UserFollowingDto } from 'src/app/entity/following/user-following';
+import { UserService } from 'src/app/services/user.service';
 @Component({
   selector: 'app-user-data',
   templateUrl: './user-data.component.html',
   styleUrls: ['./user-data.component.scss'],
 })
 export class UserDataComponent implements OnInit {
-  user!: UserFollowing;
+  @Input()
+  email!:string;
+  user!: UserFollowingDto;
   
+  constructor(private userService:UserService){}
   ngOnInit(): void {
-    this.user = mockUser;
+    
+    this.userService.getUserFollowing(this.email).subscribe({
+      next: (data:UserFollowingDto) =>{
+        this.user=data
+        console.log(data)
+      }
+    })
   }
 }

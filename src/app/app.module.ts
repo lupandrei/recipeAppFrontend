@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navigation/navbar/navbar.component
 import { HomeComponent } from './components/home/home.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 import { DishesWrapperComponent } from './components/home/dishes-wrapper/dishes-wrapper.component';
 import { DishCardComponent } from './components/home/dish-card/dish-card.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
@@ -79,7 +81,9 @@ import { LoginGuardService } from './services/guard/login-guard.service';
     HttpClientModule,
     MatSnackBarModule,
     CarouselModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

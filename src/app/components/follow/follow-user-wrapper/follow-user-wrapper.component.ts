@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { UserRecipeDisplayInformationDto } from 'src/app/entity/user/user-recipe-display-information-dto';
+import { JwtService } from 'src/app/services/config/jwt.service';
 
 @Component({
   selector: 'app-follow-user-wrapper',
@@ -9,4 +10,10 @@ import { UserRecipeDisplayInformationDto } from 'src/app/entity/user/user-recipe
 export class FollowUserWrapperComponent {
   @Input()
   users!:UserRecipeDisplayInformationDto[];
+
+  constructor(private jwtService: JwtService){}
+  checkCurrentUser(user: UserRecipeDisplayInformationDto){
+    return this.jwtService.isCurrentUser(user.email)
+
+  }
 }

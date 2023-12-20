@@ -4,6 +4,7 @@ import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, switchMap } from 'rxjs';
+import { JwtService } from 'src/app/services/config/jwt.service';
 
 @Component({
   selector: 'app-recipe-page',
@@ -14,22 +15,23 @@ export class RecipePageComponent implements OnInit  {
   recipe!:RecipeDto;
   displayData!:RecipeDisplayDto;
   selected:string='ingredients';
-  constructor(private recipeService:RecipeService,private route:ActivatedRoute){}
+  isCurrentUser!:boolean;
+  constructor(private jwtService:JwtService,private recipeService:RecipeService,private route:ActivatedRoute){}
   ngOnInit(): void {
-  
+   
     this.route.queryParams.subscribe(() => {
-      console.log(window.history.state.id)
       this.recipeService.getRecipeById(window.history.state.id)
     .subscribe({
       next: (data: RecipeDto) => {
         this.recipe=data;
         this.displayData=data as RecipeDisplayDto;
+        this.isCurrentUser=this.jwtService.isCurrentUser(this.recipe.userRecipeDisplayInformationDto.email)
       }
     })
     });
   }
-  changeView(viewOption:string){
-    this.selected=viewOption
-  }
+    changeView(viewOption:string){
+      this.selected=viewOption
+    }
 
 }

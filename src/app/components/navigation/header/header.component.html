@@ -1,14 +1,30 @@
 <div class="header-navigation margin-top small-margin-bottom">
     <ng-container *ngIf="this.canNavigate">
-            <mat-icon svgIcon="arrow-back" routerLink="/home"></mat-icon>
-            <div class="center-title">
-                <p class="bold-medium-font">{{title}}</p>
-            </div>
-           
+        <mat-icon svgIcon="arrow-back" routerLink="/home"></mat-icon>
+        <div class="center-title">
+            <p class="bold-medium-font">{{ title }}</p>
+        </div>
+        <button *ngIf="!isCurrentUser" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_horiz</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <mat-icon>star_border</mat-icon>
+                <span>Rate</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>add_comment</mat-icon>
+                <span>Review</span>
+            </button>
+            <button mat-menu-item>
+                <mat-icon>notifications_on</mat-icon>
+                <span>Save</span>
+            </button>
+        </mat-menu>
     </ng-container>
     <ng-container *ngIf="!this.canNavigate">
         <div class="center-title">
-            <p class="bold-medium-font">{{title}}</p>
+            <p class="bold-medium-font">{{ title }}</p>
         </div>
     </ng-container>
 </div>

@@ -12,4 +12,5 @@ export class CookieServiceImpl {
     return this.cookieService.get(cookie);
   }
 
+
 }

@@ -36,11 +36,12 @@ export class RecipeService {
   getFilteredDisplayRecipes(
     rating?: number,
     category?: string,
-    title?: string
+    title?: string,
+    email?: string
   ): Observable<any> {
-    
+
     let url = this.RECIPE_API_ENDPOINT + '/display';
-    if (rating || category || title) {
+    if (rating || category || title ||email) {
       let params = new HttpParams();
       if (rating) {
         params = params.set('rating', rating);
@@ -49,7 +50,10 @@ export class RecipeService {
         params = params.set('category', category);
       }
       if (title) {
-        params=params.set('title', title);
+        params = params.set('title', title);
+      }
+      if (email) {
+        params = params.set('email', email);
       }
       url += `?${params.toString()}`;
     }

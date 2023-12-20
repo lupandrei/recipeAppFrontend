@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -10,4 +10,6 @@ export class HeaderComponent {
   title!:string;
   @Input()
   canNavigate!:boolean;
+  @Input()
+  isCurrentUser!:boolean
 }

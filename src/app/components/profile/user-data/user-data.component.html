@@ -1,4 +1,4 @@
-<div class="container-following">
+<div *ngIf="user" class="container-following">
     <div class="data">
         <img src="https://st4.depositphotos.com/1017986/25404/i/450/depositphotos_254046202-stock-photo-happy-male-indian-chef-in.jpg"
             alt="Avatar">
@@ -16,4 +16,4 @@
         <span class="section-value">{{this.user.following}}</span>
     </div>
 </div>
-<span class="bold-medium-font no-padding">{{this.user.name}}</span>
+<span *ngIf="user" class="bold-medium-font no-padding">{{this.user.firstName}} {{this.user.lastName}}</span>

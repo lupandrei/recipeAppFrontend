@@ -1,19 +1,19 @@
 <div *ngIf="recipe" class="main-container small-margin-top">
-    <app-header [canNavigate]="true"></app-header>
+    <app-header [isCurrentUser]="isCurrentUser" [canNavigate]="true"></app-header>
     <app-full-image-display [dish]="displayData" [showTitle]="false"></app-full-image-display>
     <div class="info">
         <span class="title">{{recipe.title}}</span>
         <span class="reviews">({{recipe.countReviews}} reviews)</span>
     </div>
-    <app-follow-user [user]="recipe.userRecipeDisplayInformationDto"></app-follow-user>
+    <app-follow-user [isCurrentUser]="isCurrentUser" [user]="recipe.userRecipeDisplayInformationDto"></app-follow-user>
     <div class="select-view small-margin-top">
-        <div [ngClass]="{'text-backgroud-selected':this.selected=='ingredients',
-             'text-backgroud-default': selected !== 'ingredients'}"
+        <div [ngClass]="{'text-background-selected':this.selected=='ingredients',
+             'text-background-default': selected !== 'ingredients'}"
              class="option"
              (click)="changeView('ingredients')">
              Ingredients
         </div>
-        <div [ngClass]="{'text-backgroud-selected':this.selected=='steps',
+        <div [ngClass]="{'text-background-selected':this.selected=='steps',
              'text-background-default': selected !== 'steps'}"
               class="option"
               (click)="changeView('steps')">
