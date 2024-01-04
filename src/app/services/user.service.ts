@@ -30,8 +30,14 @@ export class UserService {
         return throwError(error);
       }))
   }
-  getUsersByEmail(email:string):Observable<PaginatedUsersReponse>{
-    return this.http.get<PaginatedUsersReponse>(this.USER_API_ENDPOINT+`?email=${email}`).pipe(
+  getUsersByEmail(email:string,followed:boolean,follower:boolean,emailUserProfile:string):Observable<PaginatedUsersReponse>{
+    let url;
+    if(follower!=undefined && followed!=undefined && emailUserProfile)
+      url = `${this.USER_API_ENDPOINT}?email=${email}&follower=${follower}&followed=${followed}&emailUserProfile=${emailUserProfile}`;
+    else{
+      url = `${this.USER_API_ENDPOINT}?email=${email}`;
+    }
+    return this.http.get<PaginatedUsersReponse>(url).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error);

@@ -1,19 +1,21 @@
-<div *ngIf="user" class="container-following">
-    <div class="data">
-        <img src="https://st4.depositphotos.com/1017986/25404/i/450/depositphotos_254046202-stock-photo-happy-male-indian-chef-in.jpg"
-            alt="Avatar">
+<div class="user-info">
+    <div *ngIf="user" class="container-following">
+        <div class="data">
+            <img src="https://st4.depositphotos.com/1017986/25404/i/450/depositphotos_254046202-stock-photo-happy-male-indian-chef-in.jpg"
+                alt="Avatar">
+        </div>
+        <div class="data">
+            <span class="section-title">Recipes</span>
+            <span class="section-value">{{this.user.recipes}}</span>
+        </div>
+        <div (click)="openModal('follower')" class="data">
+            <span class="section-title">Followers</span>
+            <span class="section-value">{{this.user.followers}}</span>
+        </div>
+        <div (click)="openModal('followed')" class="data">
+            <span class="section-title">Following</span>
+            <span class="section-value">{{this.user.following}}</span>
+        </div>
     </div>
-    <div class="data">
-        <span class="section-title">Recipes</span>
-        <span class="section-value">{{this.user.recipes}}</span>
-    </div>
-    <div class="data">
-        <span class="section-title">Followers</span>
-        <span class="section-value">{{this.user.followers}}</span>
-    </div>
-    <div class="data">
-        <span class="section-title">Following</span>
-        <span class="section-value">{{this.user.following}}</span>
-    </div>
+    <span *ngIf="user" class="bold-medium-font no-padding">{{this.user.firstName}} {{this.user.lastName}}</span>
 </div>
-<span *ngIf="user" class="bold-medium-font no-padding">{{this.user.firstName}} {{this.user.lastName}}</span>

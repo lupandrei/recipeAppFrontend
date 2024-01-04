@@ -1,0 +1,66 @@
+.review-wrapper{
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.user-wrapper{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+img {
+    border-radius: 50%;
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    object-position: center;
+}
+.name{
+    font-family: Poppins-Bold;
+    font-size: 1.8vh;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0px;
+    margin-left: 10px;
+}
+.rating-wrapper{
+    flex-direction: row;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.mat-icon {
+    transform: scale(0.9);
+}
+.rating-color {
+    color: #ffc107;
+}
+.review-text{
+    font-family: Poppins-Regular;
+    font-size: 1.6vh;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-bottom: 0px;
+}
+.operations{
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+}
+.operation{
+    margin-right: 10px;
+}
+.review-text-wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+input{
+    height:30px;
+    padding:10px;
+}
+.grey-color{
+    color:grey;
+}

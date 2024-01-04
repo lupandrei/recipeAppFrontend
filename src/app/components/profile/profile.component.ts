@@ -21,7 +21,6 @@ export class ProfileComponent implements OnInit {
     this.route.queryParamMap.subscribe(()=>{
       this.email = window.history.state.email ? window.history.state.email
                   :this.jwtService.getCookieField(Constants.AUTH_COOKIE, 'email');
-      console.log(this.email)
       this.recipeService.getFilteredDisplayRecipes(undefined,undefined,undefined,this.email).subscribe(
         {
           next :(data:PaginatedDisplayRecipeResponse) =>{

@@ -13,8 +13,30 @@ import { RecipeAddDto } from '../entity/recipe/recipe-add-dto';
   providedIn: 'root',
 })
 export class RecipeService {
+ 
+
   private readonly RECIPE_API_ENDPOINT = Constants.API_ENDPOINT + '/recipes';
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
+
+  addReview(newReview:any):Observable<any> {
+    const url = `${this.RECIPE_API_ENDPOINT}/${newReview.id}/reviews`;
+    return this.http.post(url, newReview).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.handleError(error);
+        return throwError(error);
+      })
+    );
+  }
+
+  getRecipeReviews(id:number): Observable<any>{
+    const url = `${this.RECIPE_API_ENDPOINT}/${id}/reviews`;
+    return this.http.get(url).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.handleError(error);
+        return throwError(error);
+      })
+    );
+  }
 
   addRecipe(recipeAddDto: RecipeAddDto): Observable<any> {
     return this.http.post(this.RECIPE_API_ENDPOINT, recipeAddDto).pipe(

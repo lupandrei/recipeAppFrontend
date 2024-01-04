@@ -1,0 +1,33 @@
+<div class="wrapper small-margin-top">
+    <div class="header">
+      <span class="bold-medium-font">Reviews</span>
+      <button mat-icon-button class="close-button" (click)="onCloseClick()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+  
+    <div *ngIf="!isCurrentUser" class="add-review">
+      <form (ngSubmit)="onSubmitReview()">
+        <div class="input-review">
+          <input type="text" [(ngModel)]="newReviewText" name="newReviewText" placeholder="Enter your review">
+          <button type="submit" class="button-add">Add Review</button>
+        </div>
+        <div class="rating-wrapper">
+          <span>Rating: </span>
+          <ng-container *ngFor="let star of getStarsArray(5); let i = index">
+            <mat-icon
+              svgIcon="rating"
+              [class.grey-color]="selectedStarIndex == null || i > selectedStarIndex"
+              [class.rating-color]="selectedStarIndex != null && i <= selectedStarIndex"
+              (click)="onStarClick(i)"
+            ></mat-icon>
+          </ng-container>
+        </div>
+      </form>
+    </div>
+  
+    <div *ngFor="let review of reviews">
+      <app-review [review]="review" [isReviewer]="isReviewer(review.user.email)" [recipeId]="recipeId"></app-review>
+    </div>
+  </div>
+  

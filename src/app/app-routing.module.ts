@@ -14,6 +14,7 @@ import { SearchUsersComponent } from './components/search-users/search-users.com
 import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
 import { LoginGuardService } from './services/guard/login-guard.service';
 import { LoggedInGuardService } from './services/guard/logged-in-guard.service';
+import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
 
 const routes: Routes = [
   {path: '',component:LoginComponent,canActivate:[LoginGuardService]},
@@ -25,7 +26,8 @@ const routes: Routes = [
   {path:'profile',component:ProfileComponent,canActivate:[LoggedInGuardService]},
   {path:'recipe',component:RecipePageComponent,canActivate:[LoggedInGuardService]},
   {path:'search-users',component:SearchUsersComponent,canActivate:[LoggedInGuardService]},
-  {path:'search-recipes',component:SearchRecipesComponent,canActivate:[LoggedInGuardService]}
+  {path:'search-recipes',component:SearchRecipesComponent,canActivate:[LoggedInGuardService]},
+  {path:'saved-recipes',component:SavedRecipesComponent,canActivate:[LoggedInGuardService]}
 ];
 
 @NgModule({
@@ -72,6 +74,9 @@ export class AppRoutingModule {
       )
       .addSvgIcon(
         'search',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/search.svg')
+      )
+      .addSvgIcon(
+        'check',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/check.svg')
       )
     }  
 }

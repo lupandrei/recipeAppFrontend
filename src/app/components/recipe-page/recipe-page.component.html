@@ -3,7 +3,7 @@
     <app-full-image-display [dish]="displayData" [showTitle]="false"></app-full-image-display>
     <div class="info">
         <span class="title">{{recipe.title}}</span>
-        <span class="reviews">({{recipe.countReviews}} reviews)</span>
+        <span (click)="openReviewModalComponent()" class="reviews">({{recipe.countReviews}} reviews)</span>
     </div>
     <app-follow-user [isCurrentUser]="isCurrentUser" [user]="recipe.userRecipeDisplayInformationDto"></app-follow-user>
     <div class="select-view small-margin-top">

@@ -24,7 +24,7 @@ import { FullImageDisplayWrapperComponent } from './components/dishes-displays/f
 import { FullImageDisplayComponent } from './components/dishes-displays/full-image-display/full-image-display.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
-import { UserService } from './services/user.service';
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
@@ -42,6 +42,10 @@ import { HttpInterceptorService } from './services/config/http-interceptor.servi
 import { CookieServiceImpl } from './services/config/cookie.service';
 import { JwtService } from './services/config/jwt.service';
 import { LoginGuardService } from './services/guard/login-guard.service';
+import { ReviewsWrapperComponent } from './components/reviews/reviews-wrapper/reviews-wrapper.component';
+import { ReviewComponent } from './components/reviews/review/review.component';
+import { DeleteReviewDialogComponent } from './components/delete-review-dialog/delete-review-dialog.component';
+import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -70,7 +74,11 @@ import { LoginGuardService } from './services/guard/login-guard.service';
     SearchUsersComponent,
     FollowUserWrapperComponent,
     SearchRecipesComponent,
-    SearchFilterBarComponent
+    SearchFilterBarComponent,
+    ReviewsWrapperComponent,
+    ReviewComponent,
+    DeleteReviewDialogComponent,
+    SavedRecipesComponent
   ],
   imports: [
     BrowserModule,
@@ -83,9 +91,13 @@ import { LoginGuardService } from './services/guard/login-guard.service';
     CarouselModule,
     MatIconModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule
   ],
-  providers: [{
+  providers: [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+ {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorService,
     multi: true
