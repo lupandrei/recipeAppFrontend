@@ -188,6 +188,7 @@ export class RecipeDataFormComponent implements OnInit {
       email:this.jwtService.getCookieField(Constants.AUTH_COOKIE,'email'),
       cookTime:recipeDetails.cookTime,
       cuisine: recipeDetails.cuisine,
+      photo:recipeDetails.photo
     });
     this.selectedImageUrl = recipeDetails.photo;
 
