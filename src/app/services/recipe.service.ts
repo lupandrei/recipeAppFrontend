@@ -15,11 +15,20 @@ import { RecipeUpdateDto } from '../entity/recipe/recipe-update-dto';
   providedIn: 'root',
 })
 export class RecipeService {
+  
  
 
   private readonly RECIPE_API_ENDPOINT = Constants.API_ENDPOINT + '/recipes';
   constructor(private http: HttpClient, private _snackBar: MatSnackBar) { }
 
+  deleteRecipe(id: number) {
+    const url = `${this.RECIPE_API_ENDPOINT}/${id}`;
+    return this.http.delete(url).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.handleError(error);
+        return throwError(error);
+      }))
+  }
   addReview(newReview:any):Observable<any> {
     const url = `${this.RECIPE_API_ENDPOINT}/${newReview.id}/reviews`;
     return this.http.post(url, newReview).pipe(

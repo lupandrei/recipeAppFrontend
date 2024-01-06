@@ -7,10 +7,13 @@ import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
   styleUrls: ['./delete-review-dialog.component.scss']
 })
 export class DeleteReviewDialogComponent {
+  entity!:string;
   constructor(
     public dialogRef: MatDialogRef<DeleteReviewDialogComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
-  ) {}
+  ) {
+    this.entity=data.entity;
+  }
 
   onCancelClick(): void {
     this.dialogRef.close(false); 

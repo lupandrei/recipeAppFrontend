@@ -11,7 +11,6 @@ import { StompService } from 'src/app/services/config/stomp.service';
 })
 export class NotificationsComponent implements OnInit{
   notifications:RecipeAddNotification[]=[];
-  chatData!:any;
   constructor(private stompService: StompService,private jwtService:JwtService){}
   
   ngOnInit(): void {
@@ -29,15 +28,9 @@ export class NotificationsComponent implements OnInit{
     }
     
     this.stompService.subscribe(`/topic/recipes/${userEmail}`, (message: any) => {
-      console.log('Received message:', message);
       this.notifications.push(message)
       localStorage.setItem(`notifications_${userEmail}`,JSON.stringify(this.notifications))
-      //this.chatData = message; // Update the component data when a new message is received
     });
-    
-    // this.stompService.connectToChat(userEmail);
-    // this.chatData = this.stompService.getChatData(userEmail);
-    // this.notifications.push(this.stompService.getChatData(userEmail))
   }
 
 }

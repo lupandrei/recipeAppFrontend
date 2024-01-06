@@ -32,6 +32,9 @@ export class ReviewComponent implements OnInit {
   openDeleteReviewModal(id:number){
     const dialogRef = this.dialog.open(DeleteReviewDialogComponent, {
       width: '300px',
+      data:{
+        entity:'review'
+      }
     });
   
     dialogRef.afterClosed().subscribe(result => {

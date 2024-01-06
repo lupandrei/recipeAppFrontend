@@ -1,5 +1,8 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
+import { DeleteReviewDialogComponent } from '../../delete-review-dialog/delete-review-dialog.component';
+import { MatDialog } from '@angular/material/dialog';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-header',
@@ -16,10 +19,9 @@ export class HeaderComponent {
   @Input()
   id!:number;
 
-  constructor(private router:Router){}
+  constructor(private router:Router,private dialog:MatDialog,private recipeService:RecipeService){}
 
   updateRecipe(id:number){
-    console.log('update')
     const navigationExtras: NavigationExtras = {
       state: {
         id: id
@@ -28,6 +30,22 @@ export class HeaderComponent {
     this.router.navigate([`/add`],navigationExtras);
   }
   deleteRecipe(id:number){
-    console.log('delete')
+    const dialogRef = this.dialog.open(DeleteReviewDialogComponent, {
+      width: '300px',
+      data:{
+        entity:'recipe'
+      }
+    });
+  
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.recipeService.deleteRecipe(id).subscribe({
+            next: (data)=>{
+              this.router.navigate(['/home'])
+            }
+        } );
+      }
+    });
+
   }
 }
