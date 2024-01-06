@@ -46,6 +46,10 @@ import { ReviewsWrapperComponent } from './components/reviews/reviews-wrapper/re
 import { ReviewComponent } from './components/reviews/review/review.component';
 import { DeleteReviewDialogComponent } from './components/delete-review-dialog/delete-review-dialog.component';
 import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
+import { NotificationsComponent } from './components/notification/notifications/notifications.component';
+import { StompService } from './services/config/stomp.service';
+import { NotificationComponent } from './components/notification/notification/notification.component';
+import {MatBadgeModule} from '@angular/material/badge';
 @NgModule({
   declarations: [
     AppComponent,
@@ -78,7 +82,9 @@ import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.
     ReviewsWrapperComponent,
     ReviewComponent,
     DeleteReviewDialogComponent,
-    SavedRecipesComponent
+    SavedRecipesComponent,
+    NotificationsComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -92,16 +98,18 @@ import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.
     MatIconModule,
     MatMenuModule,
     MatButtonModule,
-    MatDialogModule
+    MatDialogModule,
+    MatBadgeModule,
   ],
-  providers: [
+  providers:
+   [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
  {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorService,
     multi: true
-  }, JwtService,CookieServiceImpl, LoginGuardService],
+  }, JwtService,CookieServiceImpl, LoginGuardService,StompService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -15,6 +15,7 @@ import { SearchRecipesComponent } from './components/search-recipes/search-recip
 import { LoginGuardService } from './services/guard/login-guard.service';
 import { LoggedInGuardService } from './services/guard/logged-in-guard.service';
 import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
+import { NotificationsComponent } from './components/notification/notifications/notifications.component';
 
 const routes: Routes = [
   {path: '',component:LoginComponent,canActivate:[LoginGuardService]},
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path:'recipe',component:RecipePageComponent,canActivate:[LoggedInGuardService]},
   {path:'search-users',component:SearchUsersComponent,canActivate:[LoggedInGuardService]},
   {path:'search-recipes',component:SearchRecipesComponent,canActivate:[LoggedInGuardService]},
-  {path:'saved-recipes',component:SavedRecipesComponent,canActivate:[LoggedInGuardService]}
+  {path:'saved-recipes',component:SavedRecipesComponent,canActivate:[LoggedInGuardService]},
+  {path:'notifications',component:NotificationsComponent,canActivate:[LoggedInGuardService]}
 ];
 
 @NgModule({

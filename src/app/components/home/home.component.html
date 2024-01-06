@@ -1,6 +1,10 @@
 <div [ngClass]="{'blur':this.show}" class="main-container padding-top ">
   <div class="welcome-wrapper">
-    <p class="bold-medium-font">Hello User</p>
+    <div class="top-welcome">
+      <p class="bold-medium-font">Welcome back</p>
+      <mat-icon routerLink="/notifications" svgIcon="notification"  [matBadge]="count > 0 ? count : ''" matBadgeSize="small" matBadgeColor="warn"></mat-icon>
+    </div>
+   
     <p class="secondary-small-text">What are you cooking today?</p>
   </div>
   <app-search-filter-bar (showEvent) ="showEventHandle($event)" (animationDoneEvent)="animationDoneEventHandle($event)"></app-search-filter-bar>

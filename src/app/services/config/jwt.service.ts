@@ -19,7 +19,13 @@ export class JwtService {
   }
 
   getCookieField(cookie: string, field: string) {
-    return this.parseJwt(this.cookieService.getCookie(cookie))[field]
+    try{
+      return this.parseJwt(this.cookieService.getCookie(cookie))[field]
+    }
+    catch{
+      return null
+    }
+    
   }
   isCurrentUser(userEmail:string){
     return this.getCookieField(Constants.AUTH_COOKIE,'email') === userEmail

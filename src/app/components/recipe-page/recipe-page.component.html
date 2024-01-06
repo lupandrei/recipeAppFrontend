@@ -1,5 +1,5 @@
 <div *ngIf="recipe" class="main-container small-margin-top">
-    <app-header [isCurrentUser]="isCurrentUser" [canNavigate]="true"></app-header>
+    <app-header [isCurrentUser]="isCurrentUser" [canNavigate]="true" [id]="recipe.id"></app-header>
     <app-full-image-display [dish]="displayData" [showTitle]="false"></app-full-image-display>
     <div class="info">
         <span class="title">{{recipe.title}}</span>

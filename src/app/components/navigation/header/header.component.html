@@ -4,17 +4,17 @@
         <div class="center-title">
             <p class="bold-medium-font">{{ title }}</p>
         </div>
-        <button *ngIf="!isCurrentUser" mat-icon-button [matMenuTriggerFor]="menu">
-            <mat-icon>more_horiz</mat-icon>
+        <button *ngIf="isCurrentUser" mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon >more_horiz</mat-icon>
         </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-                <mat-icon>star_border</mat-icon>
-                <span>Rate</span>
+            <button (click)="deleteRecipe(id)" mat-menu-item>
+                <mat-icon>delete</mat-icon>
+                <span>Delete</span>
             </button>
-            <button mat-menu-item>
-                <mat-icon>add_comment</mat-icon>
-                <span>Review</span>
+            <button (click)="updateRecipe(id)" mat-menu-item>
+                <mat-icon svgIcon="pen"></mat-icon>
+                <span>Update</span>
             </button>
         </mat-menu>
     </ng-container>

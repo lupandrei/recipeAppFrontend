@@ -3,11 +3,13 @@ import { Constants } from '../config/constants';
 import {
   HttpClient,
   HttpErrorResponse,
+  HttpHeaders,
   HttpParams,
 } from '@angular/common/http';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Observable, catchError, throwError } from 'rxjs';
 import { RecipeAddDto } from '../entity/recipe/recipe-add-dto';
+import { RecipeUpdateDto } from '../entity/recipe/recipe-update-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -37,7 +39,22 @@ export class RecipeService {
       })
     );
   }
-
+  updateRecipe(recipeUpdateDto:RecipeUpdateDto,id:number):Observable<any>{
+    console.log(recipeUpdateDto)
+    const url = `${this.RECIPE_API_ENDPOINT}/${id}`;
+    const options = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+      }),
+      body:recipeUpdateDto,
+    };
+    return this.http.put(url,recipeUpdateDto).pipe(
+      catchError((error: HttpErrorResponse) => {
+        this.handleError(error);
+        return throwError(error);
+      })
+    );
+  }
   addRecipe(recipeAddDto: RecipeAddDto): Observable<any> {
     return this.http.post(this.RECIPE_API_ENDPOINT, recipeAddDto).pipe(
       catchError((error: HttpErrorResponse) => {

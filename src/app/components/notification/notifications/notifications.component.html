@@ -1,0 +1,7 @@
+<div class="main-container">
+    <app-header [canNavigate]="true" title="Notifications" [isCurrentUser]="true"></app-header>
+    <div class="wrapper" *ngFor="let recipeAddNotifcation of notifications">
+        <app-notification [recipeAddNotification]="recipeAddNotifcation"></app-notification>
+    </div>
+</div>
+<app-navbar></app-navbar>

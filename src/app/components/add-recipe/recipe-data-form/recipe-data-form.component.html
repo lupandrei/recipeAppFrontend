@@ -73,6 +73,7 @@
         </div>
     </div>
     <div class="row">
-        <button class="button-medium margin-top" type="submit">Add Recipe</button>
+        <button *ngIf="!id" class="button-medium margin-top" type="submit">Add</button>
+        <button *ngIf="id" class="button-medium margin-top" type="submit">Update</button>
     </div>
 </form>
