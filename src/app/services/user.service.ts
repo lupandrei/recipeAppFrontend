@@ -30,19 +30,47 @@ export class UserService {
         return throwError(error);
       }))
   }
-  getUsersByEmail(email:string,followed:boolean,follower:boolean,emailUserProfile:string):Observable<PaginatedUsersReponse>{
-    let url;
-    if(follower!=undefined && followed!=undefined && emailUserProfile)
-      url = `${this.USER_API_ENDPOINT}?email=${email}&follower=${follower}&followed=${followed}&emailUserProfile=${emailUserProfile}`;
-    else{
-      url = `${this.USER_API_ENDPOINT}?email=${email}`;
+  getUsersByEmail(
+    email: string,
+    followed?: boolean,
+    follower?: boolean,
+    emailUserProfile?: string,
+    page?: number,
+    size?: number
+  ): Observable<PaginatedUsersReponse> {
+    let url = `${this.USER_API_ENDPOINT}`;
+  
+    if(email!=undefined){
+      url+=`?email=${email}`
     }
+    if (follower !== undefined) {
+      url += `&follower=${follower}`;
+    }
+  
+    if (followed !== undefined) {
+      url += `&followed=${followed}`;
+    }
+  
+    if (emailUserProfile) {
+      url += `&emailUserProfile=${emailUserProfile}`;
+    }
+  
+    if (page !== undefined) {
+      url += `&page=${page}`;
+    }
+  
+    if (size !== undefined) {
+      url += `&size=${size}`;
+    }
+  
     return this.http.get<PaginatedUsersReponse>(url).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error);
-      }))
+      })
+    );
   }
+  
 
   handleError(error: HttpErrorResponse) {
     this._snackBar.open(error.error.message,'Close',{duration: 3000})

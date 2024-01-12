@@ -11,7 +11,6 @@ import {
   Subject,
   debounceTime,
   distinctUntilChanged,
-  filter,
   switchMap,
 } from 'rxjs';
 import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
@@ -19,11 +18,8 @@ import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 import { RecipeService } from 'src/app/services/recipe.service';
 
 export const simpleFadeAnimation = trigger('simpleFadeAnimation', [
-  // the "in" style determines the "resting" state of the element when it is visible.
   state('in', style({ opacity: 0.5 })),
-  // fade in when created. this could also be written as transition('void => *')
   transition(':enter', [style({ opacity: 0 }), animate(400)]),
-  // fade out when destroyed. this could also be written as transition('void => *')
   transition(':leave', animate(400, style({ opacity: 0 }))),
 ]);
 @Component({
@@ -45,7 +41,11 @@ export class SearchFilterBarComponent implements OnInit {
   searchSubject = new Subject<string>();
   show: boolean = false;
   animationDone: boolean = true;
-
+  size:number=5;
+  totalSize!:number;
+  page:number=0;
+  loading:boolean=false;
+  disabled:boolean=false;
   constructor(private recipeService: RecipeService,private router:Router) {}
 
   filterOptions() {
@@ -59,6 +59,7 @@ export class SearchFilterBarComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.toggleLoading()
     this.searchSubject
       .pipe(
         debounceTime(300),
@@ -67,17 +68,47 @@ export class SearchFilterBarComponent implements OnInit {
           this.recipeService.getFilteredDisplayRecipes(
             this.rating,
             this.category,
-            term
+            term,
+            undefined,
+            this.page,
+            this.size
           )
         )
       )
       .subscribe({
         next: (data: PaginatedDisplayRecipeResponse) => {
+          this.totalSize=data.numberOfRecipes;
+          console.log(data.recipes)
           this.dishes = data.recipes;
           this.dishesEvent.next(this.dishes);
         },
+        complete:()=>this.toggleLoading()
       });
   }
+  toggleLoading =() => this.loading = !this.loading;
+
+  onScroll = () =>{
+    console.log("enters")
+    this.page++;
+    if(this.page*this.size<this.totalSize)
+      this.loadMoreRecipes();
+    else
+      this.disabled=true
+  } 
+  loadMoreRecipes(): void {
+    this.toggleLoading();
+    this.recipeService.getFilteredDisplayRecipes(this.rating, this.category, this.search, undefined,this.page, this.size).subscribe(
+      ({ recipes }) => {
+        this.dishes = this.dishes.concat(recipes); // Append new recipes to the existing list
+        this.dishesEvent.next(this.dishes); // Notify subscribers of new dishes
+      },
+      error => {
+        console.error('Error loading more recipes:', error);
+      },
+     () => this.toggleLoading()
+    );
+  }
+
 
   onAnimationDone(event: any) {
     if (event.toState === 'void' && event.phaseName === 'done') {
@@ -87,7 +118,9 @@ export class SearchFilterBarComponent implements OnInit {
   }
 
   onSearchChange() {
-    this.searchSubject.next(this.search);
+    this.disabled=false;
+    this.page=0;
+    this.searchSubject.next(this.search || '');
   }
 
   verifyCurrentPage(){
@@ -97,21 +130,29 @@ export class SearchFilterBarComponent implements OnInit {
   }
 
   handleFilterOptionEvent($event: any) {
+    this.page=0;
+    this.disabled=false
     this.rating=$event.rating
     this.category=$event.category
+    this.toggleLoading();
     this.recipeService
       .getFilteredDisplayRecipes(
         this.rating,
         this.category,
-        this.search
+        this.search,
+        undefined,
+        this.page,
+        this.size
       )
       .subscribe({
         next: (data: PaginatedDisplayRecipeResponse) => {
           console.log(data)
+          this.totalSize=data.numberOfRecipes
           this.dishes = data.recipes;
           this.show = false;
           this.dishesEvent.emit(this.dishes);
         },
+        complete:()=>this.toggleLoading()
       });
   }
 }

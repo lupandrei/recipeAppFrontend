@@ -1,5 +1,12 @@
 <app-header [canNavigate]="false" [title]="title"></app-header>
-<div class="main-container">
+<div
+infiniteScroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="500"
+[infiniteScrollDisabled]="disabled"
+(scrolled)="onScroll()"
+ class="main-container">
     <app-full-image-display-wrapper [showTitle]="true" [dishes]="dishes"></app-full-image-display-wrapper>
 </div>
+<div class="padding"></div>
 <app-navbar></app-navbar>

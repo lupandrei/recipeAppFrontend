@@ -85,11 +85,13 @@ export class RecipeService {
     rating?: number,
     category?: string,
     title?: string,
-    email?: string
+    email?: string,
+    page?:number,
+    size?:number
   ): Observable<any> {
 
     let url = this.RECIPE_API_ENDPOINT + '/display';
-    if (rating || category || title ||email) {
+    if (rating || category || title ||email ||page ||size) {
       let params = new HttpParams();
       if (rating) {
         params = params.set('rating', rating);
@@ -102,6 +104,12 @@ export class RecipeService {
       }
       if (email) {
         params = params.set('email', email);
+      }
+      if(page!=undefined){
+        params = params.set('page', page);
+      }
+      if(size!=undefined){
+        params = params.set('size', size);
       }
       url += `?${params.toString()}`;
     }

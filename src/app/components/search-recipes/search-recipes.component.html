@@ -1,5 +1,5 @@
 <div [@fadeIn]="fadeIn" class="main-container small-margin-top">
-    <app-header title="Search Recipes" [canNavigate]="true" [isCurrentUser]="true" ></app-header>
+    <app-header title="Search Recipes" [canNavigate]="true" [isCurrentUser]="false" ></app-header>
     <app-search-filter-bar (dishesEvent)="handleDishesEvent($event)"></app-search-filter-bar>
     <app-full-image-display-wrapper [showTitle]="true" [dishes]="dishes"></app-full-image-display-wrapper>  
 </div>

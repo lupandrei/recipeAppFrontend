@@ -13,13 +13,23 @@ export class SavedRecipeService {
   private readonly SAVED_RECIPE_API_ENDPOINT = Constants.API_ENDPOINT + '/save-recipe';
   constructor(private http:HttpClient,private _snackBar:MatSnackBar) { }
 
-  getSavedRecipes(email:string):Observable<any>{
-    const url = `${this.SAVED_RECIPE_API_ENDPOINT}?email=${email}`
+  getSavedRecipes(email: string, page?: number, size?: number): Observable<any> {
+    let url = `${this.SAVED_RECIPE_API_ENDPOINT}?email=${email}`;
+  
+    if (page !== undefined) {
+      url += `&page=${page}`;
+    }
+    
+    if (size !== undefined) {
+      url += `&size=${size}`;
+    }
+  
     return this.http.get(url).pipe(
       catchError((error: HttpErrorResponse) => {
         this.handleError(error);
         return throwError(error);
-      }))
+      })
+    );
   }
 
   removeSavedRecipe(idRecipe: number):Observable<any> {

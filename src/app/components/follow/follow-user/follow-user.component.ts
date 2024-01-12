@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { NavigationExtras, Router } from '@angular/router';
 import { UserRecipeDisplayInformationDto } from 'src/app/entity/user/user-recipe-display-information-dto';
 import { FollowingService } from 'src/app/services/following.service';
+import { NavigationService } from 'src/app/services/navigation.service';
 
 @Component({
   selector: 'app-follow-user',
@@ -15,14 +16,17 @@ export class FollowUserComponent {
   @Input()
   isCurrentUser!:boolean;
 
-  constructor(private router:Router,private followingService:FollowingService){}
+  constructor(private navigationService:NavigationService, private router:Router,private followingService:FollowingService){}
   openProfile(email:string){
     const navigationExtras: NavigationExtras = {
       state: {
         email: email
       }
     };
-    this.router.navigate([`/profile`],navigationExtras);
+    // Needed for modal redirect handling
+    this.navigationService.setEmail(email)
+    //this.router.navigate([`/profile`],navigationExtras);
+    
   }
 
   followOperation(operation:string,event:any){

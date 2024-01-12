@@ -50,6 +50,7 @@ import { NotificationsComponent } from './components/notification/notifications/
 import { StompService } from './services/config/stomp.service';
 import { NotificationComponent } from './components/notification/notification/notification.component';
 import {MatBadgeModule} from '@angular/material/badge';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -100,11 +101,13 @@ import {MatBadgeModule} from '@angular/material/badge';
     MatButtonModule,
     MatDialogModule,
     MatBadgeModule,
+    InfiniteScrollModule
   ],
   providers:
    [
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
+    
  {
     provide: HTTP_INTERCEPTORS,
     useClass: HttpInterceptorService,

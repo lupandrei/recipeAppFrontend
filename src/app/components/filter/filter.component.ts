@@ -1,5 +1,6 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FilterOptions } from 'src/app/entity/filter/filter';
+import { Cuisine } from 'src/app/enum/Cuisine';
 import { FilterService } from 'src/app/services/filter.service';
 
 @Component({
@@ -11,7 +12,9 @@ export class FilterComponent implements OnInit {
   @Output() filterOptionsEvent = new EventEmitter<FilterOptions>();
   filterOptions: FilterOptions = { rating: null, category: null };
   ratingOptions: number[] = [5, 4, 3, 2, 1];
-  categoryOptions: string[] = ['Indian', 'Spanish', 'Chinese', 'Lunch', 'Breakfast'];
+  categoryOptions: any = Object.values(Cuisine).filter(
+    (value) => typeof value === 'string'
+  );
   href!:string;
   constructor(private filterService: FilterService) {}
   ngOnInit(): void {

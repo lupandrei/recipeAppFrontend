@@ -1,4 +1,11 @@
-<div class="search-container">
+<div
+infiniteScroll
+[infiniteScrollDistance]="2"
+[infiniteScrollThrottle]="500"
+[fromRoot]="true"
+[infiniteScrollDisabled]="disabled"
+(scrolled)="onScroll()"
+ class="search-container">
     <input (mousedown)="verifyCurrentPage()" [(ngModel)]="search" (input)="onSearchChange()" class="search-input input-font" type="text" placeholder="Search recipe" />
     <div class="filter-button" (click)="filterOptions()">
      <mat-icon svgIcon="filter"></mat-icon>
