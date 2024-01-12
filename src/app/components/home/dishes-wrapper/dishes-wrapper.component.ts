@@ -1,4 +1,4 @@
-import { Component,  OnInit, ViewChild } from '@angular/core';
+import { Component,  Input,  OnInit, ViewChild } from '@angular/core';
 import { RecipeDisplayDto } from 'src/app/entity/recipe/recipe-display-dto';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { PaginatedDisplayRecipeResponse } from 'src/app/entity/recipe/paginated-display-recipe-response';
@@ -9,7 +9,8 @@ import { OwlOptions } from 'ngx-owl-carousel-o';
   styleUrls: ['./dishes-wrapper.component.scss'],
 })
 
-export class DishesWrapperComponent implements OnInit {
+export class DishesWrapperComponent {
+  @Input()
   dishes!: RecipeDisplayDto[];
   customOptions: OwlOptions = {
     loop: true,
@@ -36,13 +37,6 @@ export class DishesWrapperComponent implements OnInit {
     },
     
   }
-  constructor(private recipeService:RecipeService){};
-  ngOnInit(): void {
-     this.recipeService.getFilteredDisplayRecipes()
-    .subscribe({
-      next: (data: PaginatedDisplayRecipeResponse) => {
-        this.dishes=data.recipes
-      }
-    })
-  }
+  constructor(){};
+  
 }

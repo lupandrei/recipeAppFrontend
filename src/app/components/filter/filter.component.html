@@ -8,25 +8,29 @@
     <div class="row padding-top">
       <p class="filter-text">Rate</p>
     </div>
-    <div class="row">
-      <div class="col option option-text selected-filter-option">5</div>
-      <div class="col option option-text">4</div>
-      <div class="col option option-text">3</div>
-      <div class="col option option-text">2</div>
-      <div class="col option option-text">1</div>
+    <div class="row" (click)="handleOptionClick('rating', $event)">
+      <div class="col option option-text" [class.selected-filter-option]="filterOptions.category === 'All'">
+        All</div>
+      <ng-container *ngFor="let option of ratingOptions">
+        <div class="col option option-text" [ngClass]="{'selected-filter-option':filterOptions.rating == option}">
+          {{ option }}</div>
+      </ng-container>
     </div>
     <div class="row padding-top">
       <p class="filter-text">Category</p>
     </div>
-    <div class="row">
-      <div class="col option option-text selected-filter-option">Indian</div>
-      <div class="col option option-text">Spanish</div>
-      <div class="col option option-text">Chinese</div>
-      <div class="col option option-text">Lunch</div>
-      <div class="col option option-text">Breakfast</div>
+    <div class="row" (click)="handleOptionClick('category', $event)">
+      <div class="col option option-text" [class.selected-filter-option]="filterOptions.category === 'All'">
+        All</div>
+      <ng-container *ngFor="let option of categoryOptions">
+        <div class="col option option-text" [class.selected-filter-option]="filterOptions.category === option">
+          {{ option }}</div>
+      </ng-container>
     </div>
     <div class="row justify-content-center">
-            <button class="button-medium small-margin-top col-6">Filter</button>
+      <button (click)="sendFilterOptions()" class="button-medium small-margin-top col-6">Filter</button>
     </div>
+    
   </div>
+  
 </div>

@@ -1,4 +1,4 @@
-<form [formGroup]="dataForm" class="small-padding-top" (ngSubmit)="onSubmit()">
+<form [formGroup]="dataForm" (ngSubmit)="onSubmit()">
     <div class="img-container">
         <ng-container *ngIf="selectedImageUrl">
             <img [src]="selectedImageUrl" alt="">
@@ -73,6 +73,7 @@
         </div>
     </div>
     <div class="row">
-        <button class="button-medium margin-top" type="submit">Add Recipe</button>
+        <button *ngIf="!id" class="button-medium margin-top" type="submit">Add</button>
+        <button *ngIf="id" class="button-medium margin-top" type="submit">Update</button>
     </div>
 </form>

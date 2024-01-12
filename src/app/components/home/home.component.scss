@@ -3,7 +3,7 @@
 }
 
 .blur {
-    filter: blur(1px);
+    filter: blur(0px);
 }
 
 .search-container {
@@ -35,4 +35,13 @@
 .welcome-wrapper{
     display: flex;
     flex-direction: column;
+}
+.top-welcome{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+mat-icon{
+    transform: scale(1.2);
 }

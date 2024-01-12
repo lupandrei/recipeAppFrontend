@@ -1,13 +1,13 @@
 .filter-box {
   background-color: #fff;
   border-radius: 50px 50px 0px 0px;
-  height: 50%;
+  height: 60%;
 }
 .option {
-  margin-left:10px;
-  margin-top:10px;
-  padding: 5px 10px ;
+  padding: 5px 15px ;
   align-items: center;
+  margin-top: 10px;
+  margin-left: 5px;
   text-align: center;
   //max-width: 30%;
   border-radius: 10px;
@@ -33,4 +33,13 @@
 }
 p{
     margin: 0px;
+}
+.rating-wrapper{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.filter-text{
+
+  padding-left: 0px ;
 }

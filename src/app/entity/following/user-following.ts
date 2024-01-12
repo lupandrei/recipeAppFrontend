@@ -1,5 +1,7 @@
-export interface UserFollowing {
-    name:string;
+export interface UserFollowingDto {
+    firstName:string;
+    lastName:string;
+    profilePicture:string;
     recipes:number;
     followers:number;
     following:number;

@@ -1,7 +1,13 @@
-<div class="main-container">
+<div
+infiniteScroll
+[infiniteScrollDistance]="0"
+[infiniteScrollThrottle]="500"
+[infiniteScrollDisabled]="disabled"
+(scrolled)="onScroll()"
+ class="main-container">
     <app-header [title]="title" [canNavigate]="false"></app-header>
-    <app-user-data></app-user-data>
-    <app-full-image-display-wrapper [showTitle]="true"></app-full-image-display-wrapper>
+    <app-user-data *ngIf="email" [email]="email"></app-user-data>
+    <app-full-image-display-wrapper *ngIf="dishes" [dishes]="dishes" [showTitle]="true"></app-full-image-display-wrapper>
 </div>
 <div class="padding"></div>
 <app-navbar></app-navbar>

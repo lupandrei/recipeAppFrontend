@@ -11,17 +11,25 @@ import { RecipePageComponent } from './components/recipe-page/recipe-page.compon
 import { DomSanitizer } from '@angular/platform-browser';
 import { MatIconRegistry } from '@angular/material/icon';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
+import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
+import { LoginGuardService } from './services/guard/login-guard.service';
+import { LoggedInGuardService } from './services/guard/logged-in-guard.service';
+import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
+import { NotificationsComponent } from './components/notification/notifications/notifications.component';
 
 const routes: Routes = [
-  {path: '',component:LoginComponent},
-  {path: 'sign-up',component:SignUpComponent},
-  {path:'navbar',component:NavbarComponent},
-  {path:'home',component:HomeComponent},
-  {path:'filter',component:FilterComponent},
-  {path:'add',component:AddRecipeComponent},
-  {path:'profile',component:ProfileComponent},
-  {path:'recipe',component:RecipePageComponent},
-  {path:'search',component:SearchUsersComponent}
+  {path: '',component:LoginComponent,canActivate:[LoginGuardService]},
+  {path: 'sign-up',component:SignUpComponent,canActivate:[LoginGuardService]},
+  {path:'navbar',component:NavbarComponent,canActivate:[LoggedInGuardService]},
+  {path:'home',component:HomeComponent,canActivate:[LoggedInGuardService]},
+  {path:'filter',component:FilterComponent,canActivate:[LoggedInGuardService]},
+  {path:'add',component:AddRecipeComponent,canActivate:[LoggedInGuardService]},
+  {path:'profile',component:ProfileComponent,canActivate:[LoggedInGuardService]},
+  {path:'recipe',component:RecipePageComponent,canActivate:[LoggedInGuardService]},
+  {path:'search-users',component:SearchUsersComponent,canActivate:[LoggedInGuardService]},
+  {path:'search-recipes',component:SearchRecipesComponent,canActivate:[LoggedInGuardService]},
+  {path:'saved-recipes',component:SavedRecipesComponent,canActivate:[LoggedInGuardService]},
+  {path:'notifications',component:NotificationsComponent,canActivate:[LoggedInGuardService]}
 ];
 
 @NgModule({
@@ -68,6 +76,9 @@ export class AppRoutingModule {
       )
       .addSvgIcon(
         'search',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/search.svg')
+      )
+      .addSvgIcon(
+        'check',this.sanitizer.bypassSecurityTrustResourceUrl('../assets/svgs/check.svg')
       )
     }  
 }

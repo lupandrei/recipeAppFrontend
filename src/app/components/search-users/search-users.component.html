@@ -1,7 +1,13 @@
-<div class="main-container margin-top">
+<div
+infiniteScroll
+[infiniteScrollDistance]="1"
+[infiniteScrollThrottle]="500"
+[infiniteScrollDisabled]="disabled"
+(scrolled)="onScroll()"
+ class="main-container margin-top">
     <input [(ngModel)]="search" (input)="onSearchChange()" class="search-user" type="text"
         placeholder="Search for Taste Twins">
     <app-follow-user-wrapper *ngIf="users" [users]="users"></app-follow-user-wrapper>
 </div>
-    
-<app-navbar></app-navbar>
+<div class="padding"></div>
+<app-navbar *ngIf="showNavbar"></app-navbar>

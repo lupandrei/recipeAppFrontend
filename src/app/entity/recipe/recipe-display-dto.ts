@@ -4,4 +4,5 @@ export interface RecipeDisplayDto {
   cookTime: number;
   photo: string;
   rating: number;
+  isSaved:boolean
 }

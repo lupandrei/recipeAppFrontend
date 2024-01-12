@@ -1,4 +1,4 @@
-<div class="dish">
+<div class="dish" (click)="redirect(dish.id)">
     <div class="top-overlay">
         <div class="background">
             <span class="rating-color center-svg">
@@ -9,7 +9,7 @@
             </span>
         </div>
     </div>
-    <img src="https://images.pexels.com/photos/4393021/pexels-photo-4393021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+    <img [src]="dish.photo"
         alt="" />
     <div [ngClass]="{'flex-end':!showTitle}" class="info-overlay">
         <ng-container *ngIf="showTitle">
@@ -21,8 +21,9 @@
                 <mat-icon svgIcon="clock"></mat-icon>
             </span>
             <span class="time">{{ dish.cookTime }}</span>
-            <div class="circle">
-                <mat-icon svgIcon="saved" class="highlight-color"></mat-icon>
+            <div (click)="saveOperation($event)" class="circle">
+                <mat-icon *ngIf="!dish.isSaved" class="highlight-color">bookmark_border</mat-icon>
+                <mat-icon *ngIf="dish.isSaved" class="highlight-color">bookmark</mat-icon>
             </div>
         </div>
     </div>

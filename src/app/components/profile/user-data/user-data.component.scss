@@ -3,7 +3,10 @@
     display: flex;
     justify-content: space-between;
 }
-
+.user-info{
+    display: flex;
+    flex-direction: column;
+}
 .data {
     display: flex;
     justify-content: center;

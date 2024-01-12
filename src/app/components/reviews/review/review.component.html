@@ -1,0 +1,33 @@
+<div *ngIf="!deleted" class="review-wrapper">
+    <div class="user-wrapper">
+        <img [src]="review.user.photo" alt="">
+        <span class="name">{{review.user.firstName}} {{review.user.lastName}}</span>
+    </div>
+    <div *ngIf="!updating" class="rating-wrapper">
+        <ng-container *ngFor="let star of getStarsArray(review.rating)">
+            <mat-icon svgIcon="rating" class="rating-color"></mat-icon>
+        </ng-container>
+    </div>
+    <div *ngIf="updating" class="rating-wrapper">
+        <ng-container *ngFor="let star of getStarsArray(5);let i=index">
+            <mat-icon svgIcon="rating" [class.grey-color]="selectedStarIndex == null || i > selectedStarIndex"
+                [class.rating-color]="selectedStarIndex != null && i <= selectedStarIndex" (click)="onStarClick(i)">
+            </mat-icon>
+        </ng-container>
+    </div>
+    <div class="review-text-wrapper">
+        <span *ngIf="!updating" class="review-text">{{review.reviewText}}</span>
+        <input *ngIf="updating" [(ngModel)]="newReviewText" type="text" [value]="review.reviewText">
+        <div *ngIf="isReviewer && !updating" class="operations">
+            <mat-icon (click)="changeViewToupdateReview(review.id)" class="operation" svgIcon="pen"></mat-icon>
+            <mat-icon (click)="openDeleteReviewModal(review.id)" svgIcon="delete"></mat-icon>
+        </div>
+        <div *ngIf="updating" class="operations">
+            <mat-icon (click)="updateReview()" svgIcon="check" class="operation"></mat-icon>
+            <mat-icon (click)="closeUpdate()" svgIcon="delete"></mat-icon>
+        </div>
+    </div>
+
+
+
+</div>

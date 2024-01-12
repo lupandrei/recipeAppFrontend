@@ -21,7 +21,7 @@
     line-height: normal;
 }
 
-.text-backgroud-selected {
+.text-background-selected {
     background-color: #129575;
     color: var(--colour-styles-neutral-colour-white, #FFF);
 }
@@ -61,4 +61,5 @@
     font-weight: 400;
     line-height: 140%;
     /* 19.6px */
+    white-space: nowrap;
 }

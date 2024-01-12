@@ -1,0 +1,26 @@
+.search-container {
+    display: flex;
+    height:40px;
+
+}
+
+.search-input {
+    flex: 1;
+    border-radius: 10px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    height: 100%;
+}
+
+.filter-button {
+    display: flex; 
+    border-radius: 10px;
+    padding:8px;
+    margin-left: 20px;
+    color:white;
+    background-color:#129575;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    height: 100%;
+}

@@ -8,21 +8,14 @@ import { RecipeService } from 'src/app/services/recipe.service';
   templateUrl: './full-image-display-wrapper.component.html',
   styleUrls: ['./full-image-display-wrapper.component.scss']
 })
-export class FullImageDisplayWrapperComponent implements OnInit {
+export class FullImageDisplayWrapperComponent  {
 
   @Input()
   showTitle!:boolean;
+  @Input()
   dishes!:RecipeDisplayDto[];
   constructor(private recipeService:RecipeService){};
 
-  ngOnInit(): void {
-     this.recipeService.getFilteredDisplayRecipes()
-    .subscribe({
-      next: (data: PaginatedDisplayRecipeResponse) => {
-        console.log(data)
-        this.dishes=data.recipes
-      }
-    })
-  }
+ 
 
 }

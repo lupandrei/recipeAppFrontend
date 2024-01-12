@@ -1,3 +1,4 @@
+import { Cuisine } from "src/app/enum/Cuisine";
 import { IngredientDto } from "../ingredient/Ingredient-dto";
 import { StepDto } from "../step/step-dto";
 import { UserRecipeDisplayInformationDto } from "../user/user-recipe-display-information-dto";
@@ -7,5 +8,6 @@ export interface RecipeDto extends RecipeDisplayDto{
     steps: StepDto[];
     ingredients: IngredientDto[];
     userRecipeDisplayInformationDto: UserRecipeDisplayInformationDto;
-    countReviews:number
+    countReviews:number,
+    cuisine:Cuisine
 }

@@ -10,6 +10,8 @@ import { NavbarComponent } from './components/navigation/navbar/navbar.component
 import { HomeComponent } from './components/home/home.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatButtonModule} from '@angular/material/button';
 import { DishesWrapperComponent } from './components/home/dishes-wrapper/dishes-wrapper.component';
 import { DishCardComponent } from './components/home/dish-card/dish-card.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
@@ -21,8 +23,8 @@ import { UserDataComponent } from './components/profile/user-data/user-data.comp
 import { FullImageDisplayWrapperComponent } from './components/dishes-displays/full-image-display-wrapper/full-image-display-wrapper.component';
 import { FullImageDisplayComponent } from './components/dishes-displays/full-image-display/full-image-display.component';
 import { RecipePageComponent } from './components/recipe-page/recipe-page.component';
-import {HttpClientModule} from '@angular/common/http'
-import { UserService } from './services/user.service';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http'
+import {MAT_DIALOG_DATA, MatDialogModule, MatDialogRef} from "@angular/material/dialog";
 import { MatSnackBarModule} from '@angular/material/snack-bar'
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import {MatIconModule} from '@angular/material/icon';
@@ -34,6 +36,21 @@ import { IngredientComponent } from './components/recipe-page/ingredient/ingredi
 import { FollowUserComponent } from './components/follow/follow-user/follow-user.component';
 import { SearchUsersComponent } from './components/search-users/search-users.component';
 import { FollowUserWrapperComponent } from './components/follow/follow-user-wrapper/follow-user-wrapper.component';
+import { SearchRecipesComponent } from './components/search-recipes/search-recipes.component';
+import { SearchFilterBarComponent } from './components/search-users/search-filter-bar/search-filter-bar.component';
+import { HttpInterceptorService } from './services/config/http-interceptor.service';
+import { CookieServiceImpl } from './services/config/cookie.service';
+import { JwtService } from './services/config/jwt.service';
+import { LoginGuardService } from './services/guard/login-guard.service';
+import { ReviewsWrapperComponent } from './components/reviews/reviews-wrapper/reviews-wrapper.component';
+import { ReviewComponent } from './components/reviews/review/review.component';
+import { DeleteReviewDialogComponent } from './components/delete-review-dialog/delete-review-dialog.component';
+import { SavedRecipesComponent } from './components/saved-recipes/saved-recipes.component';
+import { NotificationsComponent } from './components/notification/notifications/notifications.component';
+import { StompService } from './services/config/stomp.service';
+import { NotificationComponent } from './components/notification/notification/notification.component';
+import {MatBadgeModule} from '@angular/material/badge';
+import { InfiniteScrollModule } from 'ngx-infinite-scroll';
 @NgModule({
   declarations: [
     AppComponent,
@@ -60,7 +77,15 @@ import { FollowUserWrapperComponent } from './components/follow/follow-user-wrap
     IngredientComponent,
     FollowUserComponent,
     SearchUsersComponent,
-    FollowUserWrapperComponent
+    FollowUserWrapperComponent,
+    SearchRecipesComponent,
+    SearchFilterBarComponent,
+    ReviewsWrapperComponent,
+    ReviewComponent,
+    DeleteReviewDialogComponent,
+    SavedRecipesComponent,
+    NotificationsComponent,
+    NotificationComponent
   ],
   imports: [
     BrowserModule,
@@ -71,9 +96,23 @@ import { FollowUserWrapperComponent } from './components/follow/follow-user-wrap
     HttpClientModule,
     MatSnackBarModule,
     CarouselModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatBadgeModule,
+    InfiniteScrollModule
   ],
-  providers: [UserService],
+  providers:
+   [
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+    
+ {
+    provide: HTTP_INTERCEPTORS,
+    useClass: HttpInterceptorService,
+    multi: true
+  }, JwtService,CookieServiceImpl, LoginGuardService,StompService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
