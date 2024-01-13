@@ -32,7 +32,8 @@ export class UserDataComponent implements OnInit {
         follower: type == 'follower',
         followed: type == 'followed',
         showNavbar: false,
-        emailUserProfile:this.email
+        emailUserProfile:this.email,
+        fromModal:true
       }
     });
     dialogRef.afterClosed().subscribe(email => {

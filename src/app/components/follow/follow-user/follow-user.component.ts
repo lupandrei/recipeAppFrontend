@@ -16,16 +16,22 @@ export class FollowUserComponent {
   @Input()
   isCurrentUser!:boolean;
 
+  @Input()
+  fromModal!:boolean;
+
   constructor(private navigationService:NavigationService, private router:Router,private followingService:FollowingService){}
   openProfile(email:string){
+    console.log(`fromModal: ${this.fromModal}`)
     const navigationExtras: NavigationExtras = {
       state: {
         email: email
       }
     };
     // Needed for modal redirect handling
-    this.navigationService.setEmail(email)
-    //this.router.navigate([`/profile`],navigationExtras);
+    if(this.fromModal)
+      this.navigationService.setEmail(email)
+    else
+      this.router.navigate([`/profile`],navigationExtras);
     
   }
 

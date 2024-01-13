@@ -11,6 +11,9 @@ export class FollowUserWrapperComponent {
   @Input()
   users!:UserRecipeDisplayInformationDto[];
 
+  @Input()
+  fromModal!:boolean;
+
   constructor(private jwtService: JwtService){}
   checkCurrentUser(user: UserRecipeDisplayInformationDto){
     return this.jwtService.isCurrentUser(user.email)

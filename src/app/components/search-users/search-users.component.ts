@@ -20,6 +20,7 @@ export class SearchUsersComponent {
   follower:boolean=false;
   showNavbar:boolean=true;
   disabled:boolean=false;
+  fromModal!:boolean
   emailUserProfile!:string;
   users!:UserRecipeDisplayInformationDto[];
    searchSubject = new Subject<string>();
@@ -28,7 +29,8 @@ export class SearchUsersComponent {
         this.follower=data.follower
         this.followed=data.followed
         this.showNavbar=data.showNavbar!=undefined? data.showNavbar : this.showNavbar
-        this.emailUserProfile = data.emailUserProfile
+        this.emailUserProfile = data.emailUserProfile;
+        this.fromModal=data.fromModal;
     }
   ngOnInit() {
     if(this.follower!=undefined && this.followed!=undefined){
