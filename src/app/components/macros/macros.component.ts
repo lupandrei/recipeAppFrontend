@@ -47,18 +47,17 @@ export class MacrosComponent {
     }
   }
   getMacros() {
-    // this.nutritionixService.getMacronutrients(this.ingredients).subscribe({
-    //   next: (data)=>{
-
-    //   } 
-    // })
-    const data = { totalCalories: 1000, totalCarbs: 200, totalFats: 500, totalProtein: 300 }
-    this.createChart({ totalCalories: 1000, totalCarbs: 200, totalFats: 500, totalProtein: 300 })
-    this.calories = data.totalCalories
-    this.metService.getDurations({ targetCalories: data.totalCalories, weight: 70 }).subscribe(
-      {
-        next: (data: any) => { this.durations = data; console.log(this.durations) }
-      }
-    )
+    this.nutritionixService.getMacronutrients(this.ingredients).subscribe({
+      next: (data)=>{
+      this.createChart(data)
+      this.calories = data.totalCalories
+      this.metService.getDurations({ targetCalories: data.totalCalories, weight: 70 }).subscribe(
+        {
+          next: (data: any) => { this.durations = data; console.log(this.durations) }
+        }
+      )
+      } 
+    })
+   
   }
 }
