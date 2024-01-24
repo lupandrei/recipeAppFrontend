@@ -1,0 +1,13 @@
+<div class="wrap small-margin-top">
+    <div class="title">
+        How long would it take to burn off {{calories}} KCal?
+    </div>
+    <div class="activity text" *ngFor="let activity of durations |keyvalue">
+        <div>
+            {{ activity.key }}
+        </div>
+        <div>
+            {{ activity.value }} minutes
+        </div> 
+    </div>
+</div>

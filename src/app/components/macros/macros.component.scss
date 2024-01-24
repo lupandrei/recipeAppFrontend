@@ -1,0 +1,32 @@
+.button-macros{
+    display: inline-flex;
+    height: 5vh;
+    width:100%;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px;
+    background: var(--colour-styles-primary-colour-primary-100, #129575);
+    font-family: Poppins-Bold;
+    font-size: 2vh;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--white-0, #fff);
+    text-align: center;
+  }
+  .hidden{
+    display: none;
+  }
+  
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--colour-styles-label-colour, #121212);
+
+    /* Text Style/Normal Text/Bold */
+    font-family: Poppins;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}

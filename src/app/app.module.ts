@@ -51,6 +51,13 @@ import { StompService } from './services/config/stomp.service';
 import { NotificationComponent } from './components/notification/notification/notification.component';
 import {MatBadgeModule} from '@angular/material/badge';
 import { InfiniteScrollModule } from 'ngx-infinite-scroll';
+import { MapComponent } from './components/map/map.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MacrosComponent } from './components/macros/macros.component';
+import { TimeToBurnComponent } from './components/macros/time-to-burn/time-to-burn.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -85,7 +92,10 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     DeleteReviewDialogComponent,
     SavedRecipesComponent,
     NotificationsComponent,
-    NotificationComponent
+    NotificationComponent,
+    MapComponent,
+    MacrosComponent,
+    TimeToBurnComponent,
   ],
   imports: [
     BrowserModule,
@@ -101,7 +111,9 @@ import { InfiniteScrollModule } from 'ngx-infinite-scroll';
     MatButtonModule,
     MatDialogModule,
     MatBadgeModule,
-    InfiniteScrollModule
+    InfiniteScrollModule,
+    GoogleMapsModule,
+    MatExpansionModule,
   ],
   providers:
    [

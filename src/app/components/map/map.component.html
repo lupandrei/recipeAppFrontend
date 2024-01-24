@@ -1,0 +1,20 @@
+
+<google-map 
+#myGoogleMap
+    width=100%
+    height="300px"
+    [center]="center"
+    [zoom]="zoom"
+    [options]="options"
+    (mapClick)="changeMarker($event)">
+    <map-marker [position]="marker" [options]="markerOptions" />
+    <input
+    type="text"
+    class="my-search-box"
+    (keydown.enter)="$event.preventDefault()"
+    placeholder="Search Location"
+    type="text"
+    #search
+  />
+</google-map>
+

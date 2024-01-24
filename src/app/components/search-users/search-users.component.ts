@@ -20,7 +20,7 @@ export class SearchUsersComponent {
   follower:boolean=false;
   showNavbar:boolean=true;
   disabled:boolean=false;
-  fromModal!:boolean
+  fromModal!:boolean;
   emailUserProfile!:string;
   users!:UserRecipeDisplayInformationDto[];
    searchSubject = new Subject<string>();

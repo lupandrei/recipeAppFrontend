@@ -20,6 +20,19 @@
     font-weight: 600;
     line-height: normal;
 }
+.option-full-width {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 10px;
+    font-family: Poppins-Bold;
+    font-size: 11px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    height: 4vh;
+}
 
 .text-background-selected {
     background-color: #129575;
@@ -62,4 +75,23 @@
     line-height: 140%;
     /* 19.6px */
     white-space: nowrap;
+}
+.show-option{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--colour-styles-label-colour, #121212);
+
+    /* Text Style/Normal Text/Bold */
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    background: rgba(217, 217, 217, 0.5);
+    min-height: 10vh;
+    margin-bottom: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 12px;
 }

@@ -1,0 +1,6 @@
+<button (click)="getMacros()" class="button-macros">Get Macronutrients</button>
+<div class="title" *ngIf="calories">Total calories: {{calories}}</div>
+<div [hidden]="!chart">
+  <canvas [hidden]="!chart" id="MyChart" >{{chart}}</canvas>
+</div>
+<app-time-to-burn *ngIf="durations" [durations]="durations" [calories]="calories"></app-time-to-burn>

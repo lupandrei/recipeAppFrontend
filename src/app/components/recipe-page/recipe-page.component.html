@@ -1,25 +1,44 @@
 <div *ngIf="recipe" class="main-container small-margin-top">
-    <app-header [isCurrentUser]="isCurrentUser" [canNavigate]="true" [id]="recipe.id"></app-header>
-    <app-full-image-display [dish]="displayData" [showTitle]="false"></app-full-image-display>
-    <div class="info">
-        <span class="title">{{recipe.title}}</span>
-        <span (click)="openReviewModalComponent()" class="reviews">({{recipe.countReviews}} reviews)</span>
+  <app-header [isCurrentUser]="isCurrentUser" [canNavigate]="true" [id]="recipe.id"></app-header>
+  <app-full-image-display [dish]="displayData" [showTitle]="false"></app-full-image-display>
+  <div class="info">
+    <span class="title">{{recipe.title}}</span>
+    <span (click)="openReviewModalComponent()" class="reviews">({{recipe.countReviews}} reviews)</span>
+  </div>
+  <app-follow-user [isCurrentUser]="isCurrentUser" [user]="recipe.userRecipeDisplayInformationDto"></app-follow-user>
+  <div class="select-view small-margin-top">
+    <div [ngClass]="{'text-background-selected':this.selected=='ingredients',
+             'text-background-default': selected !== 'ingredients'}" class="option"
+      (click)="changeView('ingredients')">
+      Ingredients
     </div>
-    <app-follow-user [isCurrentUser]="isCurrentUser" [user]="recipe.userRecipeDisplayInformationDto"></app-follow-user>
-    <div class="select-view small-margin-top">
-        <div [ngClass]="{'text-background-selected':this.selected=='ingredients',
-             'text-background-default': selected !== 'ingredients'}"
-             class="option"
-             (click)="changeView('ingredients')">
-             Ingredients
-        </div>
-        <div [ngClass]="{'text-background-selected':this.selected=='steps',
-             'text-background-default': selected !== 'steps'}"
-              class="option"
-              (click)="changeView('steps')">
-              Steps
-        </div>
+    <div [ngClass]="{'text-background-selected':this.selected=='steps',
+             'text-background-default': selected !== 'steps'}" class="option" (click)="changeView('steps')">
+      Steps
     </div>
-    <app-steps [steps]="recipe.steps" *ngIf="selected=='steps'"></app-steps>
-    <app-ingredients *ngIf=" selected=='ingredients'" [ingredients]="recipe.ingredients" ></app-ingredients> 
+  </div>
+  <div [ngClass]="{'text-background-selected':this.selected=='information',
+    'text-background-default': selected !== 'information'}" class="option" (click)="changeView('information')"
+    class="option-full-width small-margin-top">
+    More Information
+  </div>
+  <app-steps [steps]="recipe.steps" *ngIf="selected=='steps'"></app-steps>
+  <app-ingredients *ngIf=" selected=='ingredients'" [ingredients]="recipe.ingredients"></app-ingredients>
+  <div *ngIf="selected=='information'" (click)="showMap=!showMap" class="show-option margin-top">
+    <span>How much does it cost?</span>
+    <mat-icon *ngIf="!showMap">keyboard_arrow_down</mat-icon>
+    <mat-icon *ngIf="showMap">keyboard_arrow_up</mat-icon>
+  </div>
+  <app-map [@transition] *ngIf="showMap && selected=='information'" (markerChanged)="handleMarkerChange($event)"></app-map>
+  <div  *ngIf="selected=='information'" (click)="showMacroCalculator=!showMacroCalculator" class="show-option small-margin-top">
+    <span>Macro calculator</span>
+    <mat-icon *ngIf="!showMacroCalculator">keyboard_arrow_down</mat-icon>
+    <mat-icon *ngIf="showMacroCalculator">keyboard_arrow_up</mat-icon>
+  </div>
+  <app-macros [@transition] *ngIf="selected=='information' && showMacroCalculator" [ingredients]="recipe.ingredients"></app-macros>
+  <div *ngIf="selected=='information'" (click)="showMap=!showMap" class="show-option small-margin-top">
+    <span>Can I find something similar nearby?</span>
+    <mat-icon *ngIf="!showMap">keyboard_arrow_down</mat-icon>
+    <mat-icon *ngIf="showMap">keyboard_arrow_up</mat-icon>
+  </div>
 </div>
